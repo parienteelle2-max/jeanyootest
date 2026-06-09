@@ -243,111 +243,301 @@
         </div>
     </section>
 
-    <!-- PRODUCT CATEGORIES SHOWCASE -->
+    <!-- PRODUCT CATEGORIES SHOWCASE (BEST SELLING PRODUCTS WITH TAB SWITCHER) -->
     <section id="products" class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-bold tracking-wider text-brand-blue uppercase">Our Custom Specialties</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-gray-900 serif-title">High-Converting B2B Categories</p>
-                <p class="text-gray-500">Below are our most popular customizable product families. Select yours, upload your design, and we will handle the rest.</p>
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <span class="text-brand-blue font-bold tracking-wider text-xs uppercase bg-blue-50 px-3 py-1 rounded-full">B2B Customized Catalog</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 serif-title uppercase tracking-tight">Best Selling Products</h2>
+                <p class="text-gray-500">Explore our high-demand customizable apparel, bags, and drinkware. Select a category, choose your style, and get an instant digital render mockup.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&q=80&w=600" alt="Custom Tote Bags" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 100 pcs</span>
+            <!-- TAB NAVIGATION -->
+            <div class="flex flex-wrap justify-center gap-1 sm:gap-2 mb-12 border-b border-gray-200 pb-2 max-w-4xl mx-auto">
+                <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-4 sm:px-6 py-3 font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 border-b-2 border-brand-blue text-brand-blue uppercase">
+                    Most Popular
+                </button>
+                <button onclick="switchTab('tshirts')" id="tab-tshirts" class="tab-btn px-4 sm:px-6 py-3 font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    T-Shirts
+                </button>
+                <button onclick="switchTab('bags')" id="tab-bags" class="tab-btn px-4 sm:px-6 py-3 font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Bags & Totes
+                </button>
+                <button onclick="switchTab('drinkware')" id="tab-drinkware" class="tab-btn px-4 sm:px-6 py-3 font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Drinkware
+                </button>
+                <button onclick="switchTab('stationery')" id="tab-stationery" class="tab-btn px-4 sm:px-6 py-3 font-bold text-xs sm:text-sm tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Stationery
+                </button>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- PRODUCT 1 (T-SHIRTS / POPULAR) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all tshirts">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400" alt="Gildan SoftStyle Cotton Adult T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-white" title="White"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-600" title="Blue"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Gildan SoftStyle Cotton Adult T-Shirt</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">100% Ringspun Cotton</p>
+                        </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Custom Canvas & Cotton Tote Bags</h4>
-                        <p class="text-xs text-gray-500">Ideal for promotional giveaways, retail packaging, and trade shows. Screen print or embroidery ready.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.35</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=600" alt="Custom Apparel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 50 pcs</span>
+                <!-- PRODUCT 2 (T-SHIRTS) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Gildan Softstyle Adult T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-800" title="Dark Gray"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-emerald-950" title="Forest Green"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-900" title="Navy"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-white" title="White"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-gray-400" title="Gray"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Gildan® Softstyle® Adult T-Shirt</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Standard B2B Uniform</p>
+                        </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Corporate Premium Hoodies & Tees</h4>
-                        <p class="text-xs text-gray-500">Premium heavy-blend cotton apparel tailored with high-density embroidery or soft-feel screen prints.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&q=80&w=600" alt="Custom Tumblers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 100 pcs</span>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Insulated Stainless Steel Drinkware</h4>
-                        <p class="text-xs text-gray-500">Vacuum double-walled tumblers and sports flasks cleanly etched with high-precision laser engraving.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.24</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
                     </div>
                 </div>
 
-                <!-- Product 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=600" alt="Custom Notebooks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 200 pcs</span>
+                <!-- PRODUCT 3 (T-SHIRTS) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400" alt="Men's Xtreme-Tek T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-pink-600" title="Magenta"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-yellow-500" title="Gold"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-orange-600" title="Orange"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-green-600" title="Green"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Royal Blue"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Men's Xtreme-Tek™ T-Shirt</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Dry-Fit Athletic Tech</p>
+                        </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Custom PU Leather Notebooks</h4>
-                        <p class="text-xs text-gray-500">Premium business notebooks featuring blind debossing or elegant foil stamping on the covers.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600" alt="Luxury Packaging" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 500 pcs</span>
-                    </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Luxury Rigid Gift Boxes & Bags</h4>
-                        <p class="text-xs text-gray-500">Thick paperboard gift boxes cleanly branded with luxury metallic foil stamping or offset CMYK printing.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $6.54</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
                     </div>
                 </div>
 
-                <!-- Product 6 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=600" alt="Corporate Giveaways" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 right-4 bg-brand-charcoal text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">MOQ: 100 pcs</span>
+                <!-- PRODUCT 4 (T-SHIRTS) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" alt="Team 365 Ladies' Zone Performance" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-pink-500" title="Pink"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-violet-800" title="Purple"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-rose-600" title="Rose"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-teal-500" title="Teal"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Team 365® Ladies' Zone Performance T-Shirt</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Breathable Interlock Interloop</p>
+                        </div>
                     </div>
-                    <div class="p-6 space-y-2">
-                        <h4 class="text-lg font-bold text-gray-900">Integrated Branding Merchandise Packs</h4>
-                        <p class="text-xs text-gray-500">Full corporate gift kits comprising customized pens, tumblers, notebooks, and keys packed in a styled box.</p>
-                        <a href="#quote" class="text-xs font-extrabold text-brand-blue flex items-center pt-2 group-hover:underline">
-                            <span>Request Proof</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 ml-1"></i>
-                        </a>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.69</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
                     </div>
                 </div>
+
+                <!-- PRODUCT 5 (T-SHIRTS) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=400" alt="Comfort Colors Garment Dyed Heavyweight" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
+                        </div>
+                        <div class="flex items-center space-x-1 pt-1">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-300 border border-gray-200"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-200 border border-gray-200"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-300 border border-gray-200"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-200 border border-gray-200"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 border border-gray-200"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-stone-300 border border-gray-200"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Comfort Colors - Garment Dyed Heavyweight</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Pre-Shrunk Heavyweight Cotton</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $6.54</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 6 (BAGS / POPULAR) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all bags">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400" alt="Custom Canvas Heavy Duty Tote Bag" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-100" title="Natural Canvas"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-900" title="Brown"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Custom Canvas Heavy Duty Tote Bag</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Premium 12oz Cotton Canvas</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $1.90</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 7 (BAGS) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="bags">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&q=80&w=400" alt="Organic Cotton Eco Grocery Bag" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-50" title="Ecru"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-green-800" title="Green"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-yellow-500" title="Yellow"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Organic Cotton Eco Grocery Bag</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Reinforced Handles, Eco Material</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $1.15</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 8 (DRINKWARE / POPULAR) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all drinkware">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&q=80&w=400" alt="Double-Walled Insulated Vacuum Tumbler" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-zinc-400" title="Silver"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-800" title="Matte Black"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-emerald-600" title="Teal"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-sky-200" title="Pastel Blue"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Double-Walled Insulated Vacuum Tumbler</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">304 Food-Grade Stainless Steel</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $4.50</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 9 (DRINKWARE) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="drinkware">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400" alt="Sports Hydration Stainless Steel Bottle" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Royal Blue"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-neutral-800" title="Charcoal"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Sports Hydration Stainless Steel Bottle</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Laser Engraving Ready</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.90</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 10 (STATIONERY / POPULAR) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all stationery">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=400" alt="Premium PU Debossed Business Notebook" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 200</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-900" title="Tan Brown"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Midnight Black"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-900" title="Navy Blue"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Premium PU Debossed Business Notebook</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">De-bossing & Foil Stamping Ready</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $2.10</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 11 (STATIONERY) -->
+                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="stationery">
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=400" alt="Custom Metal Stylus Writing Pen" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 500</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Blue"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-zinc-300" title="Chrome"></span>
+                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Custom Metal Stylus Writing Pen</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">Smooth Ballpoint, Responsive Stylus</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $0.35</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -609,7 +799,34 @@
             });
         });
 
-        // B2B Quote Form Client Interaction (Removed Form logic - Direct WhatsApp link implemented)
+        // Product Catalog Tab Switcher
+        function switchTab(category) {
+            // Update active tab styles
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => {
+                if (tab.id === `tab-${category}`) {
+                    tab.classList.remove('border-transparent', 'text-gray-500');
+                    tab.classList.add('border-brand-blue', 'text-brand-blue');
+                } else {
+                    tab.classList.add('border-transparent', 'text-gray-500');
+                    tab.classList.remove('border-brand-blue', 'text-brand-blue');
+                }
+            });
+
+            // Filter cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const cardCats = card.getAttribute('data-category').split(' ');
+                if (category === 'all' || cardCats.includes(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+        
+        // Initialize with default category
+        switchTab('all');
     </script>
 </body>
 </html>
