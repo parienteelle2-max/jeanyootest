@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: parienteelle2-max/jeanyootest
+  branch: main
+  base_url: https://jeanyoo.com
+  auth_endpoint: api/auth
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "catalog"
+    label: "Product Catalog"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "products"
+        label: "Customizable Products"
+        file: "products.json"
+        format: "json"
+        fields:
+          - name: "products_list"
+            label: "Product List"
+            label_singular: "Product"
+            widget: "list"
+            summary: "{{fields.name}} - ${{fields.price}}"
+            fields:
+              - { label: "Product ID", name: "id", widget: "string" }
+              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Starting Price ($)", name: "price", widget: "string" }
+              - { label: "MOQ (Pieces)", name: "moq", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: [{label: "T-Shirts", value: "tshirts"}, {label: "Bags & Totes", value: "bags"}, {label: "Drinkware", value: "drinkware"}, {label: "Stationery", value: "stationery"}] }
+              - { label: "Show on Most Popular", name: "isPopular", widget: "boolean", default: false }
+              - { label: "Product Image", name: "image", widget: "image" }
+              - { label: "Customization Colors", name: "colors", widget: "list", field: { widget: "color" } }
+              - { label: "Description / Specs", name: "description", widget: "string" }

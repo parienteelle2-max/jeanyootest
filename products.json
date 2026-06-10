@@ -1,0 +1,123 @@
+[
+  {
+    "id": "1",
+    "name": "Gildan SoftStyle Cotton Adult T-Shirt",
+    "price": "3.35",
+    "moq": "50",
+    "category": "tshirts",
+    "isPopular": true,
+    "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#ffffff", "#0f172a", "#dc2626", "#2563eb"],
+    "description": "100% Ringspun Cotton"
+  },
+  {
+    "id": "2",
+    "name": "Gildan® Softstyle® Adult T-Shirt",
+    "price": "3.24",
+    "moq": "50",
+    "category": "tshirts",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#1e293b", "#064e3b", "#172554", "#ffffff", "#94a3b8"],
+    "description": "Standard B2B Uniform"
+  },
+  {
+    "id": "3",
+    "name": "Men's Xtreme-Tek™ T-Shirt",
+    "price": "6.54",
+    "moq": "100",
+    "category": "tshirts",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#db2777", "#eab308", "#ea580c", "#16a34a", "#1d4ed8"],
+    "description": "Dry-Fit Athletic Tech"
+  },
+  {
+    "id": "4",
+    "name": "Team 365® Ladies' Zone Performance T-Shirt",
+    "price": "3.69",
+    "moq": "50",
+    "category": "tshirts",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#ec4899", "#5b21b6", "#e11d48", "#14b8a6"],
+    "description": "Breathable Interlock Interloop"
+  },
+  {
+    "id": "5",
+    "name": "Comfort Colors - Garment Dyed Heavyweight",
+    "price": "6.54",
+    "moq": "50",
+    "category": "tshirts",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#a7f3d0", "#fde68a", "#c7d2fe", "#fecdd3", "#2dd4bf", "#d6d3d1"],
+    "description": "Pre-Shrunk Heavyweight Cotton"
+  },
+  {
+    "id": "6",
+    "name": "Custom Canvas Heavy Duty Tote Bag",
+    "price": "1.90",
+    "moq": "100",
+    "category": "bags",
+    "isPopular": true,
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#fef3c7", "#0f172a", "#78350f"],
+    "description": "Premium 12oz Cotton Canvas"
+  },
+  {
+    "id": "7",
+    "name": "Organic Cotton Eco Grocery Bag",
+    "price": "1.15",
+    "moq": "100",
+    "category": "bags",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#fefaf0", "#166534", "#eab308"],
+    "description": "Reinforced Handles, Eco Material"
+  },
+  {
+    "id": "8",
+    "name": "Double-Walled Insulated Vacuum Tumbler",
+    "price": "4.50",
+    "moq": "100",
+    "category": "drinkware",
+    "isPopular": true,
+    "image": "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#a1a1aa", "#1e293b", "#059669", "#bae6fd"],
+    "description": "304 Food-Grade Stainless Steel"
+  },
+  {
+    "id": "9",
+    "name": "Sports Hydration Stainless Steel Bottle",
+    "price": "3.90",
+    "moq": "100",
+    "category": "drinkware",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#dc2626", "#1d4ed8", "#262626"],
+    "description": "Laser Engraving Ready"
+  },
+  {
+    "id": "10",
+    "name": "Premium PU Debossed Business Notebook",
+    "price": "2.10",
+    "moq": "200",
+    "category": "stationery",
+    "isPopular": true,
+    "image": "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#78350f", "#0f172a", "#1d4ed8"],
+    "description": "De-bossing & Foil Stamping Ready"
+  },
+  {
+    "id": "11",
+    "name": "Custom Metal Stylus Writing Pen",
+    "price": "0.35",
+    "moq": "500",
+    "category": "stationery",
+    "isPopular": false,
+    "image": "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=400",
+    "colors": ["#0f172a", "#1d4ed8", "#d4d4d8", "#dc2626"],
+    "description": "Smooth Ballpoint, Responsive Stylus"
+  }
+]

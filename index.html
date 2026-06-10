@@ -271,273 +271,11 @@
                 </button>
             </div>
 
-            <!-- PRODUCT GRID -->
+            <!-- PRODUCT GRID (LOADED DYNAMICALLY FROM PRODUCTS.JSON) -->
             <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- PRODUCT 1 (T-SHIRTS / POPULAR) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all tshirts">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400" alt="Gildan SoftStyle Cotton Adult T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-white" title="White"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-600" title="Blue"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Gildan SoftStyle Cotton Adult T-Shirt</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">100% Ringspun Cotton</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.35</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
+                <div class="col-span-full text-center py-12 text-gray-400">
+                    <span class="animate-pulse">Loading customized catalog...</span>
                 </div>
-
-                <!-- PRODUCT 2 (T-SHIRTS) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=400" alt="Gildan Softstyle Adult T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-800" title="Dark Gray"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-emerald-950" title="Forest Green"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-900" title="Navy"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-white" title="White"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-gray-400" title="Gray"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Gildan® Softstyle® Adult T-Shirt</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Standard B2B Uniform</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.24</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 3 (T-SHIRTS) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&q=80&w=400" alt="Men's Xtreme-Tek T-Shirt" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-pink-600" title="Magenta"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-yellow-500" title="Gold"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-orange-600" title="Orange"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-green-600" title="Green"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Royal Blue"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Men's Xtreme-Tek™ T-Shirt</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Dry-Fit Athletic Tech</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $6.54</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 4 (T-SHIRTS) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=400" alt="Team 365 Ladies' Zone Performance" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-pink-500" title="Pink"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-violet-800" title="Purple"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-rose-600" title="Rose"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-teal-500" title="Teal"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Team 365® Ladies' Zone Performance T-Shirt</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Breathable Interlock Interloop</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.69</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 5 (T-SHIRTS) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="tshirts">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=400" alt="Comfort Colors Garment Dyed Heavyweight" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 50</span>
-                        </div>
-                        <div class="flex items-center space-x-1 pt-1">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-300 border border-gray-200"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-200 border border-gray-200"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-300 border border-gray-200"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-rose-200 border border-gray-200"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-400 border border-gray-200"></span>
-                            <span class="w-2.5 h-2.5 rounded-full bg-stone-300 border border-gray-200"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Comfort Colors - Garment Dyed Heavyweight</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Pre-Shrunk Heavyweight Cotton</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $6.54</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 6 (BAGS / POPULAR) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all bags">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400" alt="Custom Canvas Heavy Duty Tote Bag" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-100" title="Natural Canvas"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-900" title="Brown"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Custom Canvas Heavy Duty Tote Bag</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Premium 12oz Cotton Canvas</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $1.90</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 7 (BAGS) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="bags">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?auto=format&fit=crop&q=80&w=400" alt="Organic Cotton Eco Grocery Bag" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-50" title="Ecru"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-green-800" title="Green"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-yellow-500" title="Yellow"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Organic Cotton Eco Grocery Bag</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Reinforced Handles, Eco Material</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $1.15</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 8 (DRINKWARE / POPULAR) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all drinkware">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&q=80&w=400" alt="Double-Walled Insulated Vacuum Tumbler" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-zinc-400" title="Silver"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-800" title="Matte Black"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-emerald-600" title="Teal"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-sky-200" title="Pastel Blue"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Double-Walled Insulated Vacuum Tumbler</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">304 Food-Grade Stainless Steel</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $4.50</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 9 (DRINKWARE) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="drinkware">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400" alt="Sports Hydration Stainless Steel Bottle" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 100</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Royal Blue"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-neutral-800" title="Charcoal"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Sports Hydration Stainless Steel Bottle</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Laser Engraving Ready</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $3.90</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 10 (STATIONERY / POPULAR) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="all stationery">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&q=80&w=400" alt="Premium PU Debossed Business Notebook" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 200</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-amber-900" title="Tan Brown"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Midnight Black"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-900" title="Navy Blue"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Premium PU Debossed Business Notebook</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">De-bossing & Foil Stamping Ready</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $2.10</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
-                <!-- PRODUCT 11 (STATIONERY) -->
-                <div class="product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between" data-category="stationery">
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=400" alt="Custom Metal Stylus Writing Pen" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: 500</span>
-                        </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-slate-900" title="Black"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-blue-700" title="Blue"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-zinc-300" title="Chrome"></span>
-                            <span class="w-3 h-3 rounded-full border border-gray-200 bg-red-600" title="Red"></span>
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">Custom Metal Stylus Writing Pen</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">Smooth Ballpoint, Responsive Stylus</p>
-                        </div>
-                    </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $0.35</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -799,9 +537,77 @@
             });
         });
 
+        let allProducts = [];
+
+        // Fetch products from JSON file
+        async function loadProducts() {
+            try {
+                const response = await fetch('products.json');
+                allProducts = await response.json();
+                renderProducts('all');
+            } catch (error) {
+                console.error('Error loading products:', error);
+                document.getElementById('product-grid').innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-400">
+                        Failed to load products. Please refresh or try again later.
+                    </div>
+                `;
+            }
+        }
+
+        function renderProducts(category) {
+            const grid = document.getElementById('product-grid');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+            
+            const filtered = allProducts.filter(p => {
+                if (category === 'all') return p.isPopular;
+                return p.category === category;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-400">
+                        No products found in this category.
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(p => {
+                const colorsHtml = p.colors && p.colors.length > 0 ? p.colors.map(color => `
+                    <span class="w-3 h-3 rounded-full border border-gray-200" style="background-color: ${color};" title="${color}"></span>
+                `).join('') : '';
+
+                const card = document.createElement('div');
+                card.className = "product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between";
+                
+                card.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain mix-blend-multiply">
+                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: ${p.moq}</span>
+                        </div>
+                        <div class="flex items-center space-x-1.5 pt-1">
+                            ${colorsHtml}
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">${p.name}</h4>
+                            <p class="text-[10px] text-gray-400 font-medium">${p.description || ''}</p>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $${p.price}</span>
+                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
         // Product Catalog Tab Switcher
         function switchTab(category) {
-            // Update active tab styles
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => {
                 if (tab.id === `tab-${category}`) {
@@ -813,20 +619,11 @@
                 }
             });
 
-            // Filter cards
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                const cardCats = card.getAttribute('data-category').split(' ');
-                if (category === 'all' || cardCats.includes(category)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            renderProducts(category);
         }
-        
-        // Initialize with default category
-        switchTab('all');
+
+        // Initialize loading
+        loadProducts();
     </script>
 </body>
 </html>
