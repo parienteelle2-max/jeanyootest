@@ -30,7 +30,7 @@ collections:
               - { label: "Product Name", name: "name", widget: "string" }
               - { label: "Starting Price ($)", name: "price", widget: "string" }
               - { label: "MOQ (Pieces)", name: "moq", widget: "string" }
-              - { label: "Category", name: "category", widget: "select", options: [{label: "T-Shirts", value: "tshirts"}, {label: "Bags & Totes", value: "bags"}, {label: "Drinkware", value: "drinkware"}, {label: "Stationery", value: "stationery"}] }
+               - { label: "Category", name: "category", widget: "select", options: [{label: "T-Shirts", value: "tshirts"}, {label: "Bags & Totes", value: "bags"}, {label: "Drinkware", value: "drinkware"}, {label: "Stationery", value: "stationery"}, {label: "Apparel", value: "apparel"}, {label: "USB & Tech", value: "usb-tech"}, {label: "Office & Desk", value: "office"}, {label: "Eco-Friendly", value: "eco"}, {label: "Leisure", value: "leisure"}, {label: "Events", value: "events"}, {label: "Keychains", value: "keychains"}] }
               - { label: "Show on Most Popular", name: "isPopular", widget: "boolean", default: false }
               - { label: "Product Image", name: "image", widget: "image" }
               - { label: "Customization Colors", name: "colors", widget: "list", field: { widget: "color" } }
