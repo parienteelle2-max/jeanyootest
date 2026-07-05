@@ -6,7 +6,7 @@
     "moq": "50",
     "category": "tshirts",
     "isPopular": true,
-    "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400",
+    "image": "images/uploads/02_Apparel.png",
     "colors": ["#ffffff", "#0f172a", "#dc2626", "#2563eb"],
     "description": "100% Ringspun Cotton"
   },
@@ -17,7 +17,7 @@
     "moq": "100",
     "category": "drinkware",
     "isPopular": true,
-    "image": "/images/uploads/01_Drinkware.png",
+    "image": "images/uploads/01_Drinkware.png",
     "colors": ["#1e293b", "#d4d4d8", "#2563eb"],
     "description": "Eco-friendly, durable hydration"
   },
@@ -28,7 +28,7 @@
     "moq": "30",
     "category": "apparel",
     "isPopular": true,
-    "image": "/images/uploads/02_Apparel.png",
+    "image": "images/uploads/02_Apparel.png",
     "colors": ["#0f172a", "#334155"],
     "description": "Warm & professional brand apparel"
   },
@@ -39,7 +39,7 @@
     "moq": "50",
     "category": "bags",
     "isPopular": true,
-    "image": "/images/uploads/03_Bags.png",
+    "image": "images/uploads/03_Bags.png",
     "colors": ["#1e293b", "#0f172a"],
     "description": "Multi-compartment branding bag"
   },
@@ -50,7 +50,7 @@
     "moq": "200",
     "category": "usb-tech",
     "isPopular": true,
-    "image": "/images/uploads/04_USB_Tech.png",
+    "image": "images/uploads/04_USB_Tech.png",
     "colors": ["#d4d4d8", "#262626"],
     "description": "High-speed data promotion"
   },
@@ -61,7 +61,7 @@
     "moq": "100",
     "category": "office",
     "isPopular": true,
-    "image": "/images/uploads/06_Office_Desk.png",
+    "image": "images/uploads/06_Office_Desk.png",
     "colors": ["#78350f", "#0f172a"],
     "description": "Premium desk stationery"
   },
@@ -72,7 +72,7 @@
     "moq": "300",
     "category": "eco",
     "isPopular": true,
-    "image": "/images/uploads/07_Eco_Friendly.png",
+    "image": "images/uploads/07_Eco_Friendly.png",
     "colors": ["#fefaf0"],
     "description": "100% Sustainable bamboo material"
   },
@@ -83,7 +83,7 @@
     "moq": "500",
     "category": "leisure",
     "isPopular": true,
-    "image": "/images/uploads/08_Leisure_Outdoor.png",
+    "image": "images/uploads/08_Leisure_Outdoor.png",
     "colors": ["#000000", "#1d4ed8", "#dc2626"],
     "description": "Perfect summer brand giveaway"
   },
@@ -94,7 +94,7 @@
     "moq": "1000",
     "category": "events",
     "isPopular": true,
-    "image": "/images/uploads/09_Events_Giveaways.png",
+    "image": "images/uploads/09_Events_Giveaways.png",
     "colors": ["#2563eb", "#dc2626", "#16a34a"],
     "description": "Essential for exhibitions & events"
   },
@@ -105,7 +105,7 @@
     "moq": "500",
     "category": "keychains",
     "isPopular": true,
-    "image": "/images/uploads/10_Keychains.png",
+    "image": "images/uploads/10_Keychains.png",
     "colors": ["#525252", "#d4d4d8"],
     "description": "Branded utility for daily use"
   }
