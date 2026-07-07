@@ -410,36 +410,26 @@
                 <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-brand-blue text-brand-blue uppercase">
                     Most Popular
                 </button>
-                <button onclick="switchTab('tshirts')" id="tab-tshirts" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    T-Shirts
+                <button onclick="switchTab('silent-balls')" id="tab-silent-balls" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Silent Balls
                 </button>
-                <button onclick="switchTab('apparel')" id="tab-apparel" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Apparel
+                <button onclick="switchTab('training')" id="tab-training" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Training Equipment
                 </button>
-                <button onclick="switchTab('bags')" id="tab-bags" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Bags & Totes
+                <button onclick="switchTab('diy-knitting')" id="tab-diy-knitting" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    DIY Knitting Kits
                 </button>
-                <button onclick="switchTab('drinkware')" id="tab-drinkware" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Drinkware
+                <button onclick="switchTab('arts-crafts')" id="tab-arts-crafts" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Arts & Crafts
                 </button>
-                <button onclick="switchTab('usb-tech')" id="tab-usb-tech" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    USB & Tech
+                <button onclick="switchTab('wellness')" id="tab-wellness" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
+                    Home & Wellness
                 </button>
-                <button onclick="switchTab('office')" id="tab-office" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Office & Desk
-                </button>
-                <button onclick="switchTab('eco')" id="tab-eco" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Eco-Friendly
-                </button>
-                <button onclick="switchTab('leisure')" id="tab-leisure" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Leisure
-                </button>
-                <button onclick="switchTab('events')" id="tab-events" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Events
-                </button>
-                <button onclick="switchTab('keychains')" id="tab-keychains" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Keychains
-                </button>
+            </div>
+
+            <!-- PRODUCT GRID (LOADED DYNAMICALLY FROM DATA) -->
+            <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Products injected via JS -->
             </div>
 
             <!-- PRODUCT GRID (LOADED DYNAMICALLY FROM PRODUCTS.JSON) -->
@@ -737,114 +727,290 @@
 
         let allProducts = [
   {
-    "id": "1",
-    "name": "Gildan SoftStyle Cotton Adult T-Shirt",
-    "price": "3.35",
-    "moq": "50",
-    "category": "tshirts",
+    "id": "1601671428490",
+    "name": "Portable Foldable Fiberglass Soccer Goal Net",
+    "price": "10.50",
+    "moq": "10",
+    "category": "training",
     "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/Hce8a9a00821d44c68feec147036547dbg.png_640x640.png",
-    "colors": ["#ffffff", "#0f172a", "#dc2626", "#2563eb"],
-    "description": "100% Ringspun Cotton"
+    "image": "https://s.alicdn.com/@sc04/kf/S73820bdd0df34cefa5b8b76104e5c74b6.jpg",
+    "description": "Oxford Cloth and FiberGlass material",
+    "colors": ["red", "orange", "black"]
   },
   {
-    "id": "12",
-    "name": "Premium Stainless Steel Sports Bottle",
-    "price": "5.50",
-    "moq": "100",
-    "category": "drinkware",
+    "id": "1601671484119",
+    "name": "Metal Frame 22 FT Pickleball/Baseball Net",
+    "price": "24.55",
+    "moq": "10",
+    "category": "training",
     "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/H245c9cb753494e5d9db8bdd15acc15f60.png_640x640.png",
-    "colors": ["#1e293b", "#d4d4d8", "#2563eb"],
-    "description": "Eco-friendly, durable hydration"
+    "image": "https://s.alicdn.com/@sc04/kf/H5371ab20b7ab40b0a4b706cac4c6c149u.png",
+    "description": "Steady Net with Roller Wheels & carry bag",
+    "colors": ["white", "black"]
   },
   {
-    "id": "13",
-    "name": "Executive Zip-Up Fleece Jacket",
-    "price": "18.90",
-    "moq": "30",
-    "category": "apparel",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/H75444a695c2e4debb6e764811467630cU.jpg_640x640.jpg",
-    "colors": ["#0f172a", "#334155"],
-    "description": "Warm & professional brand apparel"
-  },
-  {
-    "id": "14",
-    "name": "Heavy Duty Travel Backpack",
-    "price": "12.50",
-    "moq": "50",
-    "category": "bags",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/H50df618c6bd64ca8a1ea2112d20ff797Y.png_640x640.png",
-    "colors": ["#1e293b", "#0f172a"],
-    "description": "Multi-compartment branding bag"
-  },
-  {
-    "id": "15",
-    "name": "Super-Fast 128GB USB 3.0 Drive",
-    "price": "4.20",
-    "moq": "200",
-    "category": "usb-tech",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/H891354f56ff24542afc4908780501acbP.jpg_640x640.jpg",
-    "colors": ["#d4d4d8", "#262626"],
-    "description": "High-speed data promotion"
-  },
-  {
-    "id": "16",
-    "name": "Luxury A5 Leather Journal",
-    "price": "3.80",
-    "moq": "100",
-    "category": "office",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/Hcd3d9ff244a641ef8f108eacb28820b0s.png_640x640.png",
-    "colors": ["#78350f", "#0f172a"],
-    "description": "Premium desk stationery"
-  },
-  {
-    "id": "17",
-    "name": "Bamboo Eco-Friendly Notebook Set",
-    "price": "2.40",
-    "moq": "300",
-    "category": "eco",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/HTB1tw60DWmWBuNjy1Xaq6xCbXXaC.jpg_640x640.jpg",
-    "colors": ["#fefaf0"],
-    "description": "100% Sustainable bamboo material"
-  },
-  {
-    "id": "18",
-    "name": "Retro Polarized Wayfarer Sunglasses",
-    "price": "1.50",
-    "moq": "500",
-    "category": "leisure",
-    "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/Hecc21ed12707430c8bff15f5c8ae70f0n.png_640x640.png",
-    "colors": ["#000000", "#1d4ed8", "#dc2626"],
-    "description": "Perfect summer brand giveaway"
-  },
-  {
-    "id": "19",
-    "name": "Full Color Lanyards with ID Holder",
-    "price": "0.45",
+    "id": "1601670713336",
+    "name": "Weighted PU Indoor Bouncy Silent Ball",
+    "price": "3.75",
     "moq": "1000",
-    "category": "events",
+    "category": "silent-balls",
     "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/Hffba54ddc77d42a69e2acf4b8ac14cebX.jpg_640x640.jpg",
-    "colors": ["#2563eb", "#dc2626", "#16a34a"],
-    "description": "Essential for exhibitions & events"
+    "image": "https://s.alicdn.com/@sc04/kf/Hd370c83d1b184459b45055e1b172e145P.jpg",
+    "description": "Newly Upgraded high elasticity sponge",
+    "colors": ["red", "black", "orange", "pink", "blue"]
   },
   {
-    "id": "20",
-    "name": "Multi-Tool Heavy Duty Keychain",
-    "price": "1.10",
-    "moq": "500",
-    "category": "keychains",
+    "id": "1601670733237",
+    "name": "Luminous Luminous Silent Basketball No.7",
+    "price": "3.99",
+    "moq": "16",
+    "category": "silent-balls",
     "isPopular": true,
-    "image": "https://s.alicdn.com/@sc04/kf/He1d980facaf04399928321460a0790abm.jpg_640x640.jpg",
-    "colors": ["#525252", "#d4d4d8"],
-    "description": "Branded utility for daily use"
+    "image": "https://s.alicdn.com/@sc04/kf/H99a9ad66f3184ad390101462d0162aa1q.jpg",
+    "description": "Weighted PU sponge airless ball",
+    "colors": ["black", "orange", "pink", "blue"]
+  },
+  {
+    "id": "1601246531022",
+    "name": "DIY Handmade Knitting Crossbag Kit",
+    "price": "3.20",
+    "moq": "10",
+    "category": "diy-knitting",
+    "isPopular": true,
+    "image": "https://s.alicdn.com/@sc04/kf/H83e185b5147641e4a2244e2c97ef69ceY.png",
+    "description": "Complete mesh canvas stitching set",
+    "colors": ["black", "pink", "blue", "green"]
+  },
+  {
+    "id": "1601671399332",
+    "name": "Basketball Arm Interference Bar Control Trainer",
+    "price": "1.20",
+    "moq": "10",
+    "category": "training",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H324f0dedab1b492385c5ac416cc63a28W.jpeg",
+    "description": "Flexible simulated defense equipment",
+    "colors": ["black"]
+  },
+  {
+    "id": "1601671379325",
+    "name": "Semi-balanced Ball Balance Trainer",
+    "price": "18.36",
+    "moq": "10",
+    "category": "training",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Heb70a7290d7846b8bbd4f17948810e9dC.jpg",
+    "description": "46cm PVC ball with straps for gym",
+    "colors": ["black"]
+  },
+  {
+    "id": "1601671309050",
+    "name": "Basketball Shooting Gesture Corrector",
+    "price": "75.00",
+    "moq": "10",
+    "category": "training",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Hb7c43509973b41fb90a0977844119b70u.jpg",
+    "description": "210cm Metal professional equipment",
+    "colors": ["black"]
+  },
+  {
+    "id": "1601671068352",
+    "name": "Yoga Roller Hollow Foam Muscle Relaxer",
+    "price": "4.12",
+    "moq": "1000",
+    "category": "wellness",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Hd290c7fc881741dfbe0f0bb50dae466ba.jpg",
+    "description": "33*14cm EVA foam roller",
+    "colors": ["black", "orange", "pink", "blue", "green"]
+  },
+  {
+    "id": "1601670930918",
+    "name": "PU Foam Stress Reliever Squeeze Ball",
+    "price": "1.06",
+    "moq": "500",
+    "category": "wellness",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H9a4f985ecfd64efe89039c6e0b20924cb.jpg",
+    "description": "Water Drop shape high bounce massage ball",
+    "colors": ["red"]
+  },
+  {
+    "id": "1601670730238",
+    "name": "18CM Solid Sponge Elastic Alligator Ball",
+    "price": "4.89",
+    "moq": "16",
+    "category": "silent-balls",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H7c2b70c389b94d8895e5d94713035d329.jpg",
+    "description": "Crazy Dodgeball slow rebound toy",
+    "colors": ["blue", "red"]
+  },
+  {
+    "id": "1601670608934",
+    "name": "400g No.7 Weighted Silent Basketball",
+    "price": "4.52",
+    "moq": "16",
+    "category": "silent-balls",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H4cfebf774a4047fba33dc5e7e9a11c0fi.png",
+    "description": "High elasticity PU silent training ball",
+    "colors": ["black", "orange", "pink", "blue"]
+  },
+  {
+    "id": "1601670655625",
+    "name": "Anti-skid 570G No.7 Silent Basketball",
+    "price": "4.52",
+    "moq": "16",
+    "category": "silent-balls",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H5a113347b5084d73be333d00c0da696aJ.jpg",
+    "description": "Premium anti-skid indoor foam ball",
+    "colors": ["black", "orange", "pink", "blue"]
+  },
+  {
+    "id": "1601670526063",
+    "name": "600g Silent Ball with Cloth Cover",
+    "price": "5.86",
+    "moq": "16",
+    "category": "silent-balls",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H9ca22ff255b84c8fbb119fd72b231861g.jpg",
+    "description": "No.7 anti-skid high elasticity ball",
+    "colors": ["black", "orange", "pink", "blue"]
+  },
+  {
+    "id": "1601670327299",
+    "name": "Practice Foam Baseballs Tballs Set",
+    "price": "0.23",
+    "moq": "16",
+    "category": "training",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Hdc10dcfecbfa4b60abac3cfd1590e1003.jpg",
+    "description": "Safe resilient PU training balls",
+    "colors": ["blue", "red", "yellow"]
+  },
+  {
+    "id": "1601670277177",
+    "name": "Lightweight Soft Foam Ice Hockey Pucks",
+    "price": "0.40",
+    "moq": "16",
+    "category": "training",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H1d69627499aa436b9afea52f79926254k.png",
+    "description": "3 inch PU pucks for classic training",
+    "colors": ["black"]
+  },
+  {
+    "id": "1601669555815",
+    "name": "Spine Care Polyurethane Massage Pillow",
+    "price": "5.98",
+    "moq": "10",
+    "category": "wellness",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Hdc94f245759c49268b8b32bb9c825176j.jpg",
+    "description": "Neck stretcher and shoulder relaxer",
+    "colors": ["black", "dark blue"]
+  },
+  {
+    "id": "1601830053620",
+    "name": "Custom Engraved Metal Nameplate Label",
+    "price": "0.08",
+    "moq": "5",
+    "category": "arts-crafts",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Ha27d3026d4a74745b1f1fd63108964555.jpg",
+    "description": "UV printed gold plated trademark tag",
+    "colors": ["gold", "silver"]
+  },
+  {
+    "id": "1601190362614",
+    "name": "Beginner Hand Knitting Crochet Kit 58pcs",
+    "price": "4.99",
+    "moq": "12",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Had30ec6d2a4e411990450ff125cd14f0Z.jpg",
+    "description": "Portable set with colorful hook set",
+    "colors": ["colored"]
+  },
+  {
+    "id": "1601125277975",
+    "name": "Quiet Highly Elastic 7# Indoor Basketball",
+    "price": "4.50",
+    "moq": "16",
+    "category": "silent-balls",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H994e532a458345f99639330258ecc7b0s.jpg",
+    "description": "Eco-friendly foam with cloth cover",
+    "colors": ["orange", "colored"]
+  },
+  {
+    "id": "1601193963976",
+    "name": "11pcs Stainless Steel Knitting Needles",
+    "price": "0.15",
+    "moq": "20",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H63fcacaf7e68434c97cc55ee781e0946b.png",
+    "description": "25/35cm straight single pointed set",
+    "colors": ["silver"]
+  },
+  {
+    "id": "1601190580485",
+    "name": "130pcs Portable Hand Knitting Kit",
+    "price": "6.45",
+    "moq": "100",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H6f2753b8189846f6b97195961b552abdX.jpg",
+    "description": "Travel knitting bag with full suit",
+    "colors": ["colored"]
+  },
+  {
+    "id": "1600753095969",
+    "name": "5M Transparent Plastic Balloon Chain",
+    "price": "0.12",
+    "moq": "50",
+    "category": "arts-crafts",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Hbe6008ac83f842ffa4cd6e2f78a9c121L.jpg",
+    "description": "Party decorations accessory set",
+    "colors": ["transparent"]
+  },
+  {
+    "id": "1601050316148",
+    "name": "48-Spool Wooden Thread Rack Organizer",
+    "price": "4.63",
+    "moq": "12",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/Habca5053352e4155a46c82bd2729bac9Q.jpg",
+    "description": "Wall-mounted embroidery spool holder",
+    "colors": ["original"]
+  },
+  {
+    "id": "1601296145167",
+    "name": "Antique Metal Purse Frame Kiss Clasp",
+    "price": "1.12",
+    "moq": "100",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/H92e03b980a444d39be04329d0cf8adf0E.jpeg",
+    "description": "20CM Square lock for DIY clutch bag",
+    "colors": ["bronze", "silver", "gold"]
+  },
+  {
+    "id": "1601050160239",
+    "name": "Icord Knitting Machine & Cord Maker",
+    "price": "0.85",
+    "moq": "12",
+    "category": "diy-knitting",
+    "isPopular": false,
+    "image": "https://s.alicdn.com/@sc04/kf/He8ca2d7256b547a8ab174be0d4c443e4Z.png",
+    "description": "Colorful fringe twister for needlework",
+    "colors": ["red", "yellow", "green", "purple"]
   }
 ];
 
