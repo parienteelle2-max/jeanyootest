@@ -788,21 +788,25 @@
                 
                 card.innerHTML = `
                     <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain mix-blend-multiply">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: ${p.moq}</span>
-                        </div>
+                        <a href="${p.url}" target="_blank" class="block group/item">
+                            <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
+                                <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover/item:scale-105 transition-transform duration-500">
+                                <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: ${p.moq}</span>
+                            </div>
+                        </a>
                         <div class="flex items-center space-x-1.5 pt-1">
                             ${colorsHtml}
                         </div>
                         <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">${p.name}</h4>
+                            <a href="${p.url}" target="_blank" class="hover:text-brand-blue transition-colors">
+                                <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">${p.name}</h4>
+                            </a>
                             <p class="text-[10px] text-gray-400 font-medium">${p.description || ''}</p>
                         </div>
                     </div>
                     <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
                         <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $${p.price}</span>
-                        <a href="#quote" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
+                        <a href="${p.url}" target="_blank" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Get Quote</a>
                     </div>
                 `;
                 grid.appendChild(card);
