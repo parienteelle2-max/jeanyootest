@@ -65,25 +65,32 @@
 
             <div class="flex flex-col lg:flex-row gap-16">
                 <div class="lg:w-1/2">
-                    <div class="sticky top-32 bg-gray-50 rounded-[2.5rem] p-12 flex items-center justify-center border border-gray-100 overflow-hidden shadow-sm">
-                        <img id="detail-image" src="" alt="Product Detail" class="max-h-[500px] max-w-full object-contain mix-blend-multiply transition-transform duration-700 hover:scale-110">
+                    <div class="sticky top-32 space-y-6">
+                        <div class="bg-gray-50 rounded-[2.5rem] p-12 flex items-center justify-center border border-gray-100 overflow-hidden shadow-sm aspect-square">
+                            <img id="detail-image" src="" alt="Product Detail" class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-700">
+                        </div>
+                        <!-- Thumbnail Gallery -->
+                        <div id="detail-gallery" class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+                            <!-- Thumbnails injected via JS -->
+                        </div>
                     </div>
                 </div>
 
                 <div class="lg:w-1/2 space-y-10">
                     <div class="space-y-4">
                         <div id="detail-tag" class="inline-block bg-blue-50 text-brand-blue px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest">PRODUCT</div>
-                        <h1 id="detail-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 serif-title leading-tight">Product Title</h1>
+                        <h1 id="detail-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 serif-title leading-tight">Product Title</h1>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-8 py-8 border-y border-gray-100">
-                        <div>
-                            <div class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Wholesale From</div>
-                            <div id="detail-price" class="text-3xl font-extrabold text-brand-blue">$0.00</div>
+                    <!-- Ladder Price Table -->
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-extrabold text-gray-900 uppercase tracking-wider">Wholesale Tier Pricing</h4>
+                        <div id="detail-ladder-prices" class="grid grid-cols-3 gap-0.5 rounded-2xl overflow-hidden border border-gray-100 bg-gray-100">
+                            <!-- Rows injected via JS -->
                         </div>
-                        <div class="border-l border-gray-100 pl-8">
-                            <div class="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-1">Min. Order (MOQ)</div>
-                            <div id="detail-moq" class="text-3xl font-extrabold text-gray-900">50 Pcs</div>
+                        <div class="flex items-center justify-between px-2">
+                             <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Min. Order: <span id="detail-moq" class="text-gray-900"></span></div>
+                             <div id="detail-price-label" class="text-[10px] font-extrabold text-brand-blue uppercase">Starting at <span id="detail-price"></span></div>
                         </div>
                     </div>
 
@@ -850,18 +857,59 @@
             const p = allProducts.find(item => item.id == productId);
             if (!p) return;
 
+            // 1. Basic Info
             document.getElementById('detail-image').src = p.image;
             document.getElementById('detail-title').innerText = p.name;
-            document.getElementById('detail-price').innerText = `From $${p.price}`;
+            document.getElementById('detail-price').innerText = `$${p.price}`;
             document.getElementById('detail-moq').innerText = `${p.moq} Pcs`;
             document.getElementById('detail-desc').innerText = p.description || 'Professional customized manufacturing services with high-quality standards.';
             document.getElementById('detail-breadcrumb-cat').innerText = p.category.replace('-', ' ');
             document.getElementById('detail-tag').innerText = p.category.toUpperCase();
             
+            // 2. Gallery
+            const gallery = document.getElementById('detail-gallery');
+            gallery.innerHTML = '';
+            const allImages = p.images && p.images.length > 0 ? p.images : [p.image];
+            allImages.forEach((imgUrl, index) => {
+                const thumb = document.createElement('button');
+                thumb.className = `w-20 h-20 flex-shrink-0 rounded-2xl border-2 overflow-hidden transition-all ${index === 0 ? 'border-brand-blue shadow-sm' : 'border-gray-100 hover:border-gray-200'}`;
+                thumb.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-cover mix-blend-multiply">`;
+                thumb.onclick = () => {
+                    document.getElementById('detail-image').src = imgUrl;
+                    gallery.querySelectorAll('button').forEach(b => b.classList.remove('border-brand-blue', 'shadow-sm'));
+                    gallery.querySelectorAll('button').forEach(b => b.classList.add('border-gray-100'));
+                    thumb.classList.add('border-brand-blue', 'shadow-sm');
+                    thumb.classList.remove('border-gray-100');
+                };
+                gallery.appendChild(thumb);
+            });
+
+            // 3. Ladder Prices
+            const ladderGrid = document.getElementById('detail-ladder-prices');
+            ladderGrid.innerHTML = '';
+            if (p.ladderPrices && p.ladderPrices.length > 0) {
+                p.ladderPrices.forEach(tier => {
+                    ladderGrid.innerHTML += `
+                        <div class="bg-white p-4 text-center">
+                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">${tier.minQuantity}+ Pcs</div>
+                            <div class="text-sm font-extrabold text-gray-900">$${tier.price}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                ladderGrid.innerHTML = `
+                    <div class="bg-white col-span-3 p-6 text-center text-sm font-bold text-gray-900">
+                        Contact us for custom bulk pricing
+                    </div>
+                `;
+            }
+            
+            // 4. WhatsApp Inquiry
             const whatsappNumber = "8618971491586";
-            const message = encodeURIComponent(`Hi JEANYOO, I'm interested in "${p.name}". Please provide more details.`);
+            const message = encodeURIComponent(`Hi JEANYOO, I'm interested in "${p.name}". Please provide more details and a quote.`);
             document.getElementById('detail-inquiry-btn').href = `https://wa.me/${whatsappNumber}?text=${message}`;
 
+            // View Management
             document.getElementById('main-content-wrapper').classList.add('view-hidden');
             document.getElementById('product-detail-view').classList.remove('view-hidden');
             window.scrollTo(0,0);
