@@ -35,6 +35,18 @@
         .serif-title {
             font-family: 'Playfair Display', serif;
         }
+        /* Custom Background Colors (Standard CSS Fallbacks) */
+        #branding-intro { background-color: rgba(248, 250, 252, 0.8); } /* bg-slate-50/80 */
+        #screen-pad-printing { background-color: rgba(239, 246, 255, 0.4); } /* bg-blue-50/40 */
+        #white-ink-transfer { background-color: rgba(238, 242, 255, 0.4); } /* bg-indigo-50/40 */
+        #embroidery-section { background-color: rgba(255, 247, 237, 0.3); } /* bg-orange-50/30 */
+        #foil-stamping { background-color: rgba(255, 251, 235, 0.4); } /* bg-amber-50/40 */
+        #laser-engraving { background-color: rgba(236, 253, 245, 0.2); } /* bg-emerald-50/20 */
+        #debossing { background-color: rgba(255, 241, 242, 0.3); } /* bg-rose-50/30 */
+        
+        .product-card img {
+            mix-blend-mode: multiply;
+        }
     </style>
 </head>
 <body class="bg-brand-light text-brand-charcoal overflow-x-hidden antialiased">
@@ -726,7 +738,7 @@
         async function loadProducts() {
             try {
                 console.log('Fetching products from JSON...');
-                const response = await fetch('./products.json');
+                const response = await fetch('./products.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Failed to load products.json');
                 allProducts = await response.json();
                 console.log('Loaded products:', allProducts.length);
