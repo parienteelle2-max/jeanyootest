@@ -3,750 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEANYOO | Custom Logo Products Manufacturer</title>
-    <!-- Tailwind CSS CDN -->
+    <title>JEANYOO | Professional B2B Branding & Manufacturing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            blue: '#1E40AF',
-                            gold: '#D97706',
-                            charcoal: '#1F2937',
-                            light: '#F9FAFB'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Lucide Icons CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        .serif-title {
-            font-family: 'Playfair Display', serif;
-        }
-        /* Custom Background Colors (Standard CSS Fallbacks) */
-        #branding-intro { background-color: rgba(248, 250, 252, 0.8); } /* bg-slate-50/80 */
-        #screen-pad-printing { background-color: rgba(239, 246, 255, 0.4); } /* bg-blue-50/40 */
-        #white-ink-transfer { background-color: rgba(238, 242, 255, 0.4); } /* bg-indigo-50/40 */
-        #embroidery-section { background-color: rgba(255, 247, 237, 0.3); } /* bg-orange-50/30 */
-        #foil-stamping { background-color: rgba(255, 251, 235, 0.4); } /* bg-amber-50/40 */
-        #laser-engraving { background-color: rgba(236, 253, 245, 0.2); } /* bg-emerald-50/20 */
-        #debossing { background-color: rgba(255, 241, 242, 0.3); } /* bg-rose-50/30 */
-        
-        .product-card img {
-            mix-blend-mode: multiply;
-        }
-    
-        /* View Management */
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif-title { font-family: 'Playfair Display', serif; }
         .view-hidden { display: none !important; }
         .product-card img { mix-blend-mode: multiply; }
+        .bg-overlay { background: linear-gradient(0deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0) 100%); }
     </style>
 </head>
-<body class="bg-brand-light text-brand-charcoal overflow-x-hidden antialiased">
-    <!-- PRODUCT DETAIL VIEW (DYNAMIC) -->
-    <section id="product-detail-view" class="view-hidden pt-32 pb-24 bg-white min-h-screen">
+<body class="bg-white text-slate-900 antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <nav class="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gray-400 mb-12">
-                <a href="/" onclick="event.preventDefault(); showHome();" class="hover:text-brand-blue transition-colors">Home</a>
+            <div class="flex justify-between h-20 items-center">
+                <a href="/" onclick="event.preventDefault(); showHome();" class="flex items-center space-x-2 group">
+                    <div class="bg-indigo-600 text-white p-2 rounded-xl group-hover:rotate-12 transition-transform">
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tighter text-slate-900 uppercase">JEANYOO</span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#services" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors uppercase tracking-wider">Services</a>
+                    <a href="#products" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors uppercase tracking-wider">Products</a>
+                    <a href="#about" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors uppercase tracking-wider">Who We Are</a>
+                    <a href="https://wa.me/8618971491586" class="bg-slate-900 text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-indigo-600 transition-all shadow-lg shadow-indigo-100">GET A QUOTE</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-900">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 z-[150] bg-white hidden">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex justify-between items-center mb-12">
+                <span class="text-2xl font-extrabold tracking-tighter uppercase">JEANYOO</span>
+                <button onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="p-2"><i data-lucide="x" class="w-8 h-8"></i></button>
+            </div>
+            <div class="space-y-8 flex-1">
+                <a href="#services" class="block text-3xl font-extrabold serif-title">Services</a>
+                <a href="#products" class="block text-3xl font-extrabold serif-title">Products</a>
+                <a href="#about" class="block text-3xl font-extrabold serif-title">Who We Are</a>
+            </div>
+            <a href="https://wa.me/8618971491586" class="w-full bg-indigo-600 text-white text-center py-6 rounded-2xl font-bold text-xl">Get a Quote</a>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL VIEW -->
+    <section id="product-detail-view" class="view-hidden pt-32 pb-24 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-slate-400 mb-12">
+                <a href="/" onclick="event.preventDefault(); showHome();" class="hover:text-indigo-600 transition-colors">Home</a>
                 <i data-lucide="chevron-right" class="w-3 h-3"></i>
-                <span id="detail-breadcrumb-cat" class="text-gray-900">Category</span>
+                <span id="detail-breadcrumb-cat" class="text-slate-900">Category</span>
             </nav>
 
-            <div class="flex flex-col lg:flex-row gap-16">
+            <div class="flex flex-col lg:flex-row gap-20">
                 <div class="lg:w-1/2">
-                    <div class="sticky top-32 space-y-6">
-                        <div class="bg-gray-50 rounded-[2.5rem] p-12 flex items-center justify-center border border-gray-100 overflow-hidden shadow-sm aspect-square">
-                            <img id="detail-image" src="" alt="Product Detail" class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-700">
+                    <div class="sticky top-32 space-y-8">
+                        <div class="bg-slate-50 rounded-[3rem] p-12 flex items-center justify-center border border-slate-100 overflow-hidden aspect-square">
+                            <img id="detail-image" src="" alt="Product" class="max-h-full max-w-full object-contain mix-blend-multiply transition-transform duration-700">
                         </div>
-                        <!-- Thumbnail Gallery -->
-                        <div id="detail-gallery" class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-                            <!-- Thumbnails injected via JS -->
-                        </div>
+                        <div id="detail-gallery" class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide"></div>
                     </div>
                 </div>
 
-                <div class="lg:w-1/2 space-y-10">
-                    <div class="space-y-4">
-                        <div id="detail-tag" class="inline-block bg-blue-50 text-brand-blue px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest">PRODUCT</div>
-                        <h1 id="detail-title" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 serif-title leading-tight">Product Title</h1>
+                <div class="lg:w-1/2 space-y-12">
+                    <div class="space-y-6">
+                        <div id="detail-tag" class="inline-block bg-indigo-50 text-indigo-600 px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest">Premium Choice</div>
+                        <h1 id="detail-title" class="text-4xl lg:text-6xl font-extrabold text-slate-900 serif-title leading-[1.1]">Product Title</h1>
                     </div>
 
-                    <!-- Ladder Price Table -->
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold text-gray-900 uppercase tracking-wider">Wholesale Tier Pricing</h4>
-                        <div id="detail-ladder-prices" class="grid grid-cols-3 gap-0.5 rounded-2xl overflow-hidden border border-gray-100 bg-gray-100">
-                            <!-- Rows injected via JS -->
-                        </div>
-                        <div class="flex items-center justify-between px-2">
-                             <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Min. Order: <span id="detail-moq" class="text-gray-900"></span></div>
-                             <div id="detail-price-label" class="text-[10px] font-extrabold text-brand-blue uppercase">Starting at <span id="detail-price"></span></div>
-                        </div>
-                    </div>
+                    <div class="grid grid-cols-3 gap-0.5 rounded-3xl overflow-hidden border border-slate-100 bg-slate-100" id="detail-ladder-prices"></div>
 
-                    <div class="space-y-4">
-                        <h4 class="text-xs font-extrabold text-gray-900 uppercase tracking-wider">Product Features</h4>
-                        <p id="detail-desc" class="text-base text-gray-500 leading-relaxed">Professional customized manufacturing services.</p>
-                    </div>
+                    <div class="space-y-6 text-lg text-slate-500 leading-relaxed" id="detail-desc"></div>
 
-                    <div class="pt-8 space-y-6">
-                        <a id="detail-inquiry-btn" href="#" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-brand-charcoal text-white font-extrabold py-6 rounded-2xl hover:bg-brand-blue shadow-2xl transition-all group">
-                            <i data-lucide="message-square" class="w-6 h-6"></i>
-                            <span class="text-lg">Inquiry Now</span>
+                    <div class="pt-8">
+                        <a id="detail-inquiry-btn" href="#" target="_blank" class="flex items-center justify-center space-x-4 w-full bg-slate-900 text-white font-extrabold py-6 rounded-3xl hover:bg-indigo-600 transition-all group shadow-2xl shadow-indigo-100">
+                            <i data-lucide="message-square" class="w-7 h-7"></i>
+                            <span class="text-xl">Inquiry Now</span>
                         </a>
+                        <p class="text-[11px] text-center mt-6 font-bold text-slate-400 uppercase tracking-widest">Real People • Real Products • Real Results</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- MAIN HOME CONTENT -->
     <div id="main-content-wrapper">
-
-    <!-- NAVIGATION HEADER -->
-    <header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center space-x-3">
-                    <img id="logo-img" src="https://sc02.alicdn.com/kf/Ac0d8fe951c6e45d2adb443bffb357d82w.png" alt="JEANYOO Logo" class="h-12 w-auto object-contain rounded">
-                    <span class="text-2xl font-extrabold tracking-tight text-gray-900 serif-title">JEANYOO</span>
-                </a>
-
-                <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex space-x-8 text-sm font-semibold text-gray-600">
-                    <a href="#services" class="hover:text-brand-blue transition-colors duration-200">Custom Services</a>
-                    <a href="#products" class="hover:text-brand-blue transition-colors duration-200">Product Categories</a>
-                    <a href="#process" class="hover:text-brand-blue transition-colors duration-200">How It Works</a>
-                    <a href="#why-us" class="hover:text-brand-blue transition-colors duration-200">Why Choose Us</a>
-                    <a href="#faq" class="hover:text-brand-blue transition-colors duration-200">FAQs</a>
-                </nav>
-
-                <!-- Header CTA Button -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#quote" class="bg-brand-charcoal text-white text-sm font-bold px-6 h-11 flex items-center justify-center rounded-lg hover:bg-brand-blue transition-all duration-300 shadow-sm">
-                        Get My Free Quote
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+        
+        <!-- HERO -->
+        <section class="relative min-h-[90vh] flex items-center pt-20">
+            <div class="absolute inset-0 z-0">
+                <img src="https://sc02.alicdn.com/kf/A46e6089c8816409bb757ca5c66e5e691f.png" class="w-full h-full object-cover grayscale-[0.2]" alt="Showroom">
+                <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
             </div>
-        </div>
-
-        <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-6 space-y-4">
-            <a href="#services" class="block text-base font-semibold text-gray-600 hover:text-brand-blue py-2">Custom Services</a>
-            <a href="#products" class="block text-base font-semibold text-gray-600 hover:text-brand-blue py-2">Product Categories</a>
-            <a href="#process" class="block text-base font-semibold text-gray-600 hover:text-brand-blue py-2">How It Works</a>
-            <a href="#why-us" class="block text-base font-semibold text-gray-600 hover:text-brand-blue py-2">Why Choose Us</a>
-            <a href="#faq" class="block text-base font-semibold text-gray-600 hover:text-brand-blue py-2">FAQs</a>
-            <a href="#quote" class="w-full bg-brand-blue text-white text-center font-bold py-3 block rounded-lg hover:bg-brand-charcoal transition-all">
-                Get My Free Quote
-            </a>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-24 md:pt-40 md:pb-32 bg-gradient-to-br from-slate-50 via-white to-blue-50/40 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                <!-- Hero Left Content -->
-                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 bg-blue-50 text-brand-blue border border-blue-100/50 px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase">
-                        <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-blue"></span>
-                        </span>
-                        <span>Professional B2B Manufacturer</span>
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight serif-title">
-                        Brand Your Products, <br class="hidden sm:block">
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-600">Professionally</span>.
-                    </h1>
-
-                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal">
-                        From Logo to Product. We provide premium custom B2B manufacturing and branding solutions for apparel, promotional gifts, drinkware, and retail-ready merchandise.
-                    </p>
-
-                    <!-- Trust Badges & CTAs -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#quote" class="w-full sm:w-auto bg-brand-blue text-white font-bold px-8 py-4 rounded-xl hover:bg-brand-charcoal transition-all duration-300 shadow-md flex items-center justify-center space-x-2 group">
-                            <span>Get My Free Quote</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="#services" class="w-full sm:w-auto bg-white border border-gray-200 text-gray-700 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 flex items-center justify-center space-x-2">
-                            <span>Explore Processes</span>
-                        </a>
-                    </div>
-
-                    <!-- Trust Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-100 max-w-lg mx-auto lg:mx-0">
-                        <div>
-                            <div class="text-3xl font-extrabold text-gray-900">100%</div>
-                            <div class="text-xs font-semibold text-gray-500 mt-1">Customizable</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-extrabold text-gray-900">12h</div>
-                            <div class="text-xs font-semibold text-gray-500 mt-1">Response Time</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-extrabold text-gray-900">Low</div>
-                            <div class="text-xs font-semibold text-gray-500 mt-1">MOQ Options</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Right Image / Visual Mockup -->
-                <div class="lg:col-span-5 relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl opacity-10 blur-xl"></div>
-                    <div class="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-xl overflow-hidden">
-                        <img src="https://sc02.alicdn.com/kf/A75c8128221464565bdbe0e7c9f8833c3O.png" alt="Silk Screen Printing Process" class="rounded-2xl w-full h-[380px] object-cover mb-6">
-                        <div class="flex items-center justify-between border-t border-gray-50 pt-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-blue-50 p-2.5 rounded-xl text-brand-blue">
-                                    <i data-lucide="shield-check" class="w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <div class="font-bold text-gray-900 text-sm">Trade Assurance Support</div>
-                                    <div class="text-xs text-gray-500">100% Payment & Shipping Protection</div>
-                                </div>
-                            </div>
-                        </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+                <div class="max-w-4xl space-y-8">
+                    <h2 class="text-indigo-400 font-extrabold uppercase tracking-[0.3em] text-sm">Professional B2B Manufacturer</h2>
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold text-white serif-title leading-[1.05]">Branding Solutions that Attract, Retain & Engage.</h1>
+                    <p class="text-xl text-slate-300 max-w-2xl leading-relaxed">Your full-service marketing partner for embroidery, screen printing, and promotional products. We turn digital visions into physical reality.</p>
+                    <div class="flex flex-col sm:flex-row items-center gap-6 pt-6">
+                        <a href="#products" class="w-full sm:w-auto bg-indigo-600 text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-slate-900 transition-all shadow-2xl shadow-indigo-900/40">Explore Products</a>
+                        <a href="https://wa.me/8618971491586" class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-slate-900 transition-all">Get a Quote</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SPLIT SECTION: VISION -->
-    <section id="branding-intro" class="py-20 bg-white overflow-hidden border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Left: Branding Copy -->
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-extrabold text-gray-900 serif-title">Crafting Identity Through Precision</h2>
-                    <p class="text-lg text-gray-500 leading-relaxed">JEANYOO is more than a manufacturer; we are your strategic partner in brand storytelling. We bridge the gap between your digital vision and physical reality with unmatched craftsmanship and attention to detail.</p>
-                    <div class="flex items-center space-x-6">
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-brand-blue"></i>
-                            <span class="text-sm font-bold text-gray-700">12h Fast Response</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i data-lucide="truck" class="w-5 h-5 text-brand-blue"></i>
-                            <span class="text-sm font-bold text-gray-700">Global DDP Shipping</span>
-                        </div>
+        <!-- TRUST BAR -->
+        <section class="bg-white py-12 border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex items-start space-x-6">
+                    <div class="text-indigo-600 font-black text-4xl serif-title italic">01</div>
+                    <div class="space-y-1">
+                        <h4 class="font-extrabold text-xl uppercase tracking-tighter">Real People</h4>
+                        <p class="text-slate-500 text-sm">We emphasize the importance of genuine human connections in every B2B partnership.</p>
                     </div>
                 </div>
-                <!-- Right: Silk Screen Intro -->
-                <div class="bg-slate-50 rounded-3xl p-8 border border-gray-100 relative group overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100/30 rounded-full -mr-16 -mt-16 group-hover:bg-blue-200/30 transition-colors"></div>
-                    <div class="relative z-10 space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="bg-brand-blue text-white p-2 rounded-xl">
-                                <i data-lucide="layers" class="w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-gray-900 uppercase tracking-tight">Silk Screen Printing</h3>
-                        </div>
-                        <p class="text-sm text-gray-500 leading-relaxed">The gold standard for durability. Our screen printing process delivers vibrant, high-density ink deposits that withstand hundreds of washes. Perfect for high-volume apparel and promotional totes.</p>
-                        <img src="https://sc02.alicdn.com/kf/A8cae67f277df40b8a3fe96cc7230837eG.png" alt="Silk Screen Printing Setup" class="rounded-xl w-full h-48 object-cover shadow-sm group-hover:scale-105 transition-transform duration-500">
+                <div class="flex items-start space-x-6 border-slate-100 md:border-x md:px-12">
+                    <div class="text-indigo-600 font-black text-4xl serif-title italic">02</div>
+                    <div class="space-y-1">
+                        <h4 class="font-extrabold text-xl uppercase tracking-tighter">Real Products</h4>
+                        <p class="text-slate-500 text-sm">Each item is carefully crafted to meet your exact specifications and exceed expectations.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-6">
+                    <div class="text-indigo-600 font-black text-4xl serif-title italic">03</div>
+                    <div class="space-y-1">
+                        <h4 class="font-extrabold text-xl uppercase tracking-tighter">Real Results</h4>
+                        <p class="text-slate-500 text-sm">We pride ourselves on delivering tangible, high-conversion outcomes for our clients.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FULL WIDTH SECTION: SILK SCREEN & PAD PRINTING -->
-    <section id="screen-pad-printing" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-8 order-2 lg:order-1">
-                    <div class="inline-block bg-blue-50 text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">High Volume Production</div>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight uppercase tracking-tighter">Silk Screen & <br> Precision Pad Printing</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">The ultimate duo for branding any surface. Our automatic screen presses handle massive apparel orders with vibrant durability, while our precision pad printing units replicate logos on complex, curved, or recessed promotional items like golf balls and electronics.</p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-gray-100">
-                            <h4 class="font-bold text-gray-900 mb-1 italic">Silk Screen</h4>
-                            <p class="text-[10px] text-gray-500">Perfect for flat textiles, totes, and large graphics.</p>
-                        </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-gray-100">
-                            <h4 class="font-bold text-gray-900 mb-1 italic">Pad Printing</h4>
-                            <p class="text-[10px] text-gray-500">Ideal for 3D shapes, pens, and irregular surfaces.</p>
-                        </div>
+        <!-- SERVICE GRID -->
+        <section id="services" class="py-32 bg-slate-50/50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                    <div class="max-w-2xl space-y-4">
+                        <h2 class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Our Core Expertise</h2>
+                        <h3 class="text-4xl sm:text-6xl font-extrabold serif-title">Full-Service Branding Excellence.</h3>
                     </div>
-                </div>
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <div class="relative rounded-[2rem] overflow-hidden shadow-2xl group">
-                        <img src="https://sc02.alicdn.com/kf/A75c8128221464565bdbe0e7c9f8833c3O.png" alt="Silk Screen and Pad Printing Workshop" class="w-full h-full object-cover aspect-video lg:aspect-square group-hover:scale-110 transition-transform duration-1000">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FULL WIDTH SECTION: WHITE INK HEAT TRANSFER (DTF) WITH 6 EFFECTS -->
-    <section id="white-ink-transfer" class="py-24 bg-brand-light relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <div class="inline-block bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Advanced DTF Technology</div>
-                <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight">White Ink Heat Transfer (DTF)</h2>
-                <p class="text-gray-500">Unlock unlimited design possibilities with our high-definition heat transfer solutions. From metallic shines to glows in the dark, we bring your brand to life on any apparel.</p>
-            </div>
-
-            <!-- Main Display & 6 Effects Grid -->
-            <div class="space-y-12">
-                <!-- Large Feature Image -->
-                <div class="relative rounded-[2.5rem] overflow-hidden shadow-xl aspect-[21/9]">
-                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=1200" alt="High Definition Apparel Printing" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8 sm:p-12">
-                        <div class="text-white space-y-2">
-                            <h4 class="text-2xl font-bold italic">Unmatched Clarity. Soft Touch.</h4>
-                            <p class="text-sm text-gray-200">Our DTF transfers support photographic gradients and extreme fine lines on premium garments.</p>
-                        </div>
-                    </div>
+                    <a href="#products" class="text-sm font-black uppercase tracking-widest border-b-4 border-indigo-600 pb-1 hover:text-indigo-600 transition-colors">View All Services</a>
                 </div>
 
-                <!-- 6 Effect Grid -->
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-                    <!-- Effect 1: Fluorescent -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/Aafd61076c88c467db1a571ecf3a0a8906.png" alt="Fluorescent Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">Fluorescent</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                    <!-- Effect 2: Reflective -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/Ab3f4b0f20c884d71ba5808aa22c1f16fo.png" alt="Reflective Silver Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">Reflective Silver</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                    <!-- Effect 3: Glow in the Dark -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/A807fb2e0d63b4b389d2d3ae51c61448cT.png" alt="Night Glow Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">Night Glow</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                    <!-- Effect 4: Diamond -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/A525f266568574a338bd7ca3da18835c8R.png" alt="Diamond Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">Diamond Finish</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                    <!-- Effect 5: Imitation Embroidery -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/A609d29464778462493a89b803ba1ea01b.png" alt="Embroidery Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">Faux Embroidery</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                    <!-- Effect 6: Silicone -->
-                    <div class="group space-y-3 text-center">
-                        <div class="aspect-square bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all group-hover:shadow-md">
-                            <img src="https://sc02.alicdn.com/kf/A05dc517cb4894340a2da4cec7c65ed9eq.png" alt="Silicone Apparel Effect" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="space-y-1">
-                            <span class="text-[10px] font-extrabold uppercase text-brand-blue tracking-tighter block">3D Silicone</span>
-                            <p class="text-[9px] font-bold text-gray-400 tracking-tight uppercase">Apparel Transfer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FULL WIDTH SECTION: MASTERFUL EMBROIDERY -->
-    <section id="embroidery-section" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-                <div class="lg:w-1/2 space-y-8">
-                    <div class="inline-block bg-gold-100 text-brand-gold px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">High-Density Texture</div>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight">Masterful Embroidery</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Elevate your brand with high-density stitch-work. Our state-of-the-art Tajima machines ensure every thread is consistent, durable, and luxurious. Ideal for corporate apparel, premium headwear, and structured canvas bags.</p>
-                    <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-brand-blue">
-                        <p class="text-sm font-medium italic text-gray-500">"We specialize in 3D puff embroidery and high-count thread patterns that deliver an unbeatable premium feel."</p>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
-                        <img src="https://sc02.alicdn.com/kf/A5801bea0e2d0421daaa021c9af072d52h.png" alt="Premium Embroidery Close-up" class="w-full h-full object-cover aspect-video lg:aspect-square hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FULL WIDTH SECTION: LUXURY FOIL STAMPING -->
-    <section id="foil-stamping" class="py-24 bg-brand-light border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-8 order-2 lg:order-1">
-                    <div class="inline-block bg-yellow-50 text-yellow-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Elite Packaging</div>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight uppercase">Luxury Foil Stamping</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Create an immediate premium impression. Our heat-transfer foil stamping technology adds a brilliant metallic luster to gift boxes, luxury bags, and high-end retail packaging.</p>
-                    <a href="#quote" class="inline-flex items-center justify-center bg-brand-charcoal text-white font-bold px-10 py-4 rounded-xl hover:bg-brand-blue shadow-lg transition-all">
-                        Upgrade My Brand Style
-                    </a>
-                </div>
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
-                        <img src="https://sc02.alicdn.com/kf/Aacf0e04dd79b4c4b8e397b869d2bb0796.png" alt="Luxury Metallic Foil Stamping" class="w-full h-full object-cover aspect-video lg:aspect-square hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- FULL WIDTH SECTION: PRECISION LASER ENGRAVING -->
-    <section id="laser-engraving" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 space-y-8 order-2 lg:order-1">
-                    <div class="inline-block bg-blue-50 text-brand-blue px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Permanent Precision</div>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight">Precision Laser Engraving</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Achieve a permanent, high-contrast mark that will never fade, peel, or wear off. Our advanced laser systems cleanly etch away surface coatings to reveal the raw material beneath, creating a crisp and elegant finish. Perfect for stainless steel tumblers, wooden gifts, and aluminum tech accessories.</p>
-                    <div class="flex items-center space-x-6 text-brand-blue font-bold text-sm italic">
-                        <span class="flex items-center space-x-2"><i data-lucide="zap" class="w-4 h-4"></i> <span>Ultra Sharp Detail</span></span>
-                        <span class="flex items-center space-x-2"><i data-lucide="infinity" class="w-4 h-4"></i> <span>Lifetime Durability</span></span>
-                    </div>
-                </div>
-                <div class="lg:w-1/2 order-1 lg:order-2">
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl group">
-                        <img src="https://sc02.alicdn.com/kf/Aa574e51406cf4a38b635358d36ffdb14c.png" alt="Precision Laser Engraving" class="w-full h-full object-cover aspect-video lg:aspect-square group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FULL WIDTH SECTION: PREMIUM DEBOSSING & BRANDING -->
-    <section id="debossing" class="py-24 bg-rose-50/30 border-b border-rose-100/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-                <div class="lg:w-1/2 space-y-8">
-                    <div class="inline-block bg-orange-50 text-brand-gold px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Sophisticated Texture</div>
-                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 serif-title leading-tight">Premium Leather Debossing</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">Add a touch of timeless class with our deep-pressed debossing. Using custom-made magnesium dies and precisely controlled heat, we indent your logo into the fabric of premium journals, leather goods, and high-end notebooks. This process creates a subtle, tactile, and highly sophisticated tone-on-tone effect.</p>
-                    <div class="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white">
-                         <p class="text-sm font-medium text-gray-500 italic">"The ultimate choice for corporate executive gifts where subtlety and quality are the primary goals."</p>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl group">
-                        <img src="https://sc02.alicdn.com/kf/A516f2b3ca8034a3684ab7c40bffabdca7.png" alt="Premium Leather Debossing" class="w-full h-full object-cover aspect-video lg:aspect-square group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCT CATEGORIES SHOWCASE -->
-    <section id="products" class="py-24 bg-brand-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <span class="text-brand-blue font-bold tracking-wider text-xs uppercase bg-blue-50 px-3 py-1 rounded-full">B2B Customized Catalog</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 serif-title uppercase tracking-tight">Best Selling Products</h2>
-                <p class="text-gray-500">Explore our high-demand customizable apparel, bags, and drinkware. Select a category, choose your style, and get an instant digital render mockup.</p>
-            </div>
-
-            <!-- TAB NAVIGATION -->
-            <div class="flex flex-wrap justify-center gap-1 sm:gap-2 mb-12 border-b border-gray-200 pb-2 max-w-6xl mx-auto">
-                <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-brand-blue text-brand-blue uppercase">
-                    Most Popular
-                </button>
-                <button onclick="switchTab('silent-balls')" id="tab-silent-balls" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Silent Balls
-                </button>
-                <button onclick="switchTab('training')" id="tab-training" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Training Equipment
-                </button>
-                <button onclick="switchTab('diy-knitting')" id="tab-diy-knitting" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    DIY Knitting Kits
-                </button>
-                <button onclick="switchTab('arts-crafts')" id="tab-arts-crafts" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Arts & Crafts
-                </button>
-                <button onclick="switchTab('wellness')" id="tab-wellness" class="tab-btn px-3 sm:px-4 py-3 font-bold text-[10px] sm:text-xs tracking-wider transition-all duration-300 border-b-2 border-transparent text-gray-500 hover:text-brand-blue uppercase">
-                    Home & Wellness
-                </button>
-            </div>
-
-            <!-- PRODUCT GRID (LOADED DYNAMICALLY FROM DATA) -->
-            <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="col-span-full text-center py-12 text-gray-400">
-                    <span class="animate-pulse">Loading customized catalog...</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS: SOURCING WORKFLOW -->
-    <section id="process" class="py-24 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-bold tracking-wider text-brand-blue uppercase">Hassle-Free Sourcing</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-gray-900 serif-title">Our 4-Step Customized Process</p>
-                <p class="text-gray-500">We make bulk custom ordering entirely transparent and effortless, bridging the distance between your logo and physical products.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8 relative">
-                <!-- Step 1 -->
-                <div class="space-y-4 text-center md:text-left relative">
-                    <div class="text-5xl font-extrabold text-blue-100 leading-none">01</div>
-                    <h5 class="text-lg font-bold text-gray-900">Submit Requirements</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">Fill out our quick B2B form below with your desired products, quantities, and logo file.</p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="space-y-4 text-center md:text-left relative">
-                    <div class="text-5xl font-extrabold text-blue-100 leading-none">02</div>
-                    <h5 class="text-lg font-bold text-gray-900">Free Digital Proof</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">Our designers lay your logo onto a realistic digital render and send you a PDF proof in 12 hours.</p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="space-y-4 text-center md:text-left relative">
-                    <div class="text-5xl font-extrabold text-blue-100 leading-none">03</div>
-                    <h5 class="text-lg font-bold text-gray-900">Precision Production</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">Once you approve, we begin the printing, embroidery, or engraving process with rigid QA.</p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="space-y-4 text-center md:text-left relative">
-                    <div class="text-5xl font-extrabold text-blue-100 leading-none">04</div>
-                    <h5 class="text-lg font-bold text-gray-900">DDP Global Delivery</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">We handle all custom filings and deliver right to your warehouse door—duties paid (DDP).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST SECTION -->
-    <section id="why-us" class="py-24 bg-gradient-to-br from-slate-900 to-brand-charcoal text-white overflow-hidden relative">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(30,64,175,0.15),transparent)] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6">
-                    <span class="text-brand-blue font-bold tracking-wider text-xs uppercase bg-blue-900/40 px-3 py-1.5 rounded-full">Factory Direct Advantage</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold serif-title leading-tight">Why B2B Sourcing Partners Love JEANYOO</h3>
-                    <p class="text-slate-400">We do not operate like transactional trading agents. We are a direct manufacturing partner focused on building long-term relationships with brands in the US, Canada, and Europe.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                     
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <div class="bg-blue-900/60 text-blue-400 p-1.5 rounded-lg mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
+                    <!-- Card 1: Embroidery -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/A5801bea0e2d0421daaa021c9af072d52h.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="Embroidery">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Premium Embroidery</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">High-density Tajima stitch-work for luxury uniforms and headwear.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
                             </div>
-                            <div>
-                                <span class="font-bold text-slate-100">Trade Assurance & Protected Payments:</span>
-                                <span class="text-slate-400 block text-sm">We handle B2B contract transactions under Alibaba Trade Assurance so your funds remain 100% secure.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="bg-blue-900/60 text-blue-400 p-1.5 rounded-lg mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="font-bold text-slate-100">Absolute Logo/IP Compliance:</span>
-                                <span class="text-slate-400 block text-sm">We enforce rigid intellectual property measures. Your branding assets are strictly kept inside the production floor.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="bg-blue-900/60 text-blue-400 p-1.5 rounded-lg mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="font-bold text-slate-100">Rigid Quality Control:</span>
-                                <span class="text-slate-400 block text-sm">Every single piece is visually checked by our QC team before loading to prevent registration mismatches or bleeding.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                    <div class="text-center pb-6 border-b border-white/10">
-                        <div class="text-brand-blue font-bold text-sm tracking-wider uppercase mb-1">Verify Our Qualifications</div>
-                        <div class="text-2xl font-extrabold serif-title">Registered & Certified Factory</div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6 pt-6">
-                        <div class="border border-white/5 bg-white/[0.02] p-4 rounded-2xl text-center">
-                            <div class="text-slate-400 text-xs font-semibold mb-1">Trade Assurance</div>
-                            <div class="text-emerald-400 font-bold text-sm flex items-center justify-center space-x-1">
-                                <i data-lucide="shield-alert" class="w-4 h-4"></i>
-                                <span>Supported</span>
-                            </div>
-                        </div>
-                        <div class="border border-white/5 bg-white/[0.02] p-4 rounded-2xl text-center">
-                            <div class="text-slate-400 text-xs font-semibold mb-1">Free Render Mockups</div>
-                            <div class="text-blue-400 font-bold text-sm">Within 12 Hours</div>
-                        </div>
-                        <div class="border border-white/5 bg-white/[0.02] p-4 rounded-2xl text-center">
-                            <div class="text-slate-400 text-xs font-semibold mb-1">Production Lead Time</div>
-                            <div class="text-blue-400 font-bold text-sm">7 - 14 Days</div>
-                        </div>
-                        <div class="border border-white/5 bg-white/[0.02] p-4 rounded-2xl text-center">
-                            <div class="text-slate-400 text-xs font-semibold mb-1">Shipping Logistics</div>
-                            <div class="text-blue-400 font-bold text-sm">Express / Sea DDP</div>
                         </div>
                     </div>
+
+                    <!-- Card 2: Screen Printing -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/A75c8128221464565bdbe0e7c9f8833c3O.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="Screen Printing">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Silk Screen Printing</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Vibrant, durable ink deposits for high-volume apparel orders.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: DTF -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/Ab0b72204766f4d32ae5abc9a14c58917g.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="DTF">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Advanced DTF Transfer</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Unlimited colors and gradients on any fabric with soft-touch finish.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Laser -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/Aa574e51406cf4a38b635358d36ffdb14c.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="Laser">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Precision Laser Etching</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Permanent, high-contrast marks on tumblers, wood, and metal.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Foil -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/Aacf0e04dd79b4c4b8e397b869d2bb0796.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="Foil">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Luxury Foil Stamping</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Brilliant metallic luster for premium packaging and gifts.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Debossing -->
+                    <div class="relative group overflow-hidden aspect-[4/5] bg-slate-900">
+                        <img src="https://sc02.alicdn.com/kf/A516f2b3ca8034a3684ab7c40bffabdca7.png" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" alt="Debossing">
+                        <div class="absolute inset-0 bg-overlay p-10 flex flex-col justify-end">
+                            <div class="space-y-4 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                                <h4 class="text-3xl font-extrabold text-white serif-title">Premium Debossing</h4>
+                                <p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700">Sophisticated deep-pressed indentations for journals and leather.</p>
+                                <button class="bg-white text-slate-900 px-8 py-3 rounded-full text-xs font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-700">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FAQS SECTION -->
-    <section id="faq" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 space-y-4">
-                <h2 class="text-xs font-bold tracking-wider text-brand-blue uppercase">Help Center</h2>
-                <p class="text-3xl font-extrabold text-gray-900 serif-title">Frequently Asked B2B Questions</p>
-            </div>
-
-            <div class="space-y-6">
-                <!-- FAQ 1 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h5 class="text-lg font-bold text-gray-900 mb-2">What format should I provide my brand logo in?</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">We strongly recommend vector file formats like .AI, .EPS, .PDF, or high-resolution .PNG with a transparent background. Vector formats ensure crisp laser etching and razor-sharp printing at any dimension.</p>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h5 class="text-lg font-bold text-gray-900 mb-2">Can I request physical pre-production samples?</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">Yes! While digital rendered proofs are completely free, we can also produce a physical pre-production sample for your absolute peace of mind. Standard sample fees are fully credited toward the bulk order deposit.</p>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h5 class="text-lg font-bold text-gray-900 mb-2">How are B2B payments protected?</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">We handle orders under official secure frameworks. Most clients prefer Alibaba Trade Assurance, which holds and protects payments until you verify shipping tracking. This completely eliminates international sourcing risk.</p>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="border-b border-gray-100 pb-6">
-                    <h5 class="text-lg font-bold text-gray-900 mb-2">Do you handle shipping custom filings and duties (DDP)?</h5>
-                    <p class="text-sm text-gray-500 leading-relaxed">Absolutely. We offer complete Delivered Duty Paid (DDP) logistics. We handle export clearances, sea/air cargo freight, customs documentation, and domestic trucking—delivering straight to your company or Amazon warehouse door with zero hidden fees.</p>
+        <!-- MID-PAGE CTA -->
+        <section class="bg-indigo-600 py-32 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-4 space-y-10">
+                <h3 class="text-indigo-200 font-bold uppercase tracking-[0.3em] text-xs">Elevate Your Presence</h3>
+                <h2 class="text-5xl sm:text-7xl font-extrabold text-white serif-title leading-tight">Now Offering Complimentary Consultation and Pro Quotes.</h2>
+                <div class="flex justify-center">
+                    <a href="https://wa.me/8618971491586" class="bg-white text-indigo-600 px-16 py-6 rounded-full font-black text-xl hover:scale-105 hover:bg-slate-900 hover:text-white transition-all shadow-2xl">GET A QUOTE</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- REQUEST A QUOTE: B2B WHATSAPP DIRECT CONNECT -->
-    <section id="quote" class="py-24 bg-brand-light border-t border-gray-100 relative">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 space-y-4">
-                <span class="text-brand-blue font-bold tracking-wider text-xs uppercase bg-blue-50 px-3 py-1 rounded-full">Direct Connection</span>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 serif-title">Let’s Build Your Brand Together</h3>
-                <p class="text-gray-500 max-w-xl mx-auto">Skip the long forms. Chat directly with our B2B customized procurement engineers on WhatsApp for real-time quotation, custom product design suggestions, and fast mockup rendering.</p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-100 text-center space-y-8 flex flex-col items-center">
-                <!-- WhatsApp Icon -->
-                <div class="bg-emerald-50 text-emerald-500 w-20 h-20 rounded-full flex items-center justify-center shadow-sm animate-pulse">
-                    <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.328-.899-.801-1.507-1.792-1.683-2.09-.174-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.05-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.825 0 00-3.48-8.413z"/>
-                    </svg>
-                </div>
-                
-                <div class="space-y-2">
-                    <h4 class="text-2xl font-extrabold text-gray-900 serif-title">Chat Directly with a Sourcing Specialist</h4>
-                    <p class="text-gray-500 max-w-md mx-auto text-sm">Send us your logos, design ideas, and expected product quantities. Our team is online and ready to draft your free design render instantly.</p>
+        <!-- PRODUCT CATALOG -->
+        <section id="products" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                    <div class="max-w-2xl space-y-4">
+                        <h2 class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Bestsellers</h2>
+                        <h3 class="text-4xl sm:text-6xl font-extrabold serif-title">Catalog Showcase.</h3>
+                    </div>
                 </div>
 
-                <a href="https://wa.me/8618971491586?text=Hi%20JEANYOO,%20I'm%20interested%20in%20customizing%20logo%20products%20for%20my%20business.%20Could%20you%20help%20me%20with%20mockups%20and%20pricing?" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-emerald-500 text-white font-extrabold px-10 py-5 rounded-2xl hover:bg-brand-charcoal hover:-translate-y-1 transition-all duration-300 shadow-lg group">
-                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.328-.899-.801-1.507-1.792-1.683-2.09-.174-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.05-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.456h.008c6.554 0 11.89-5.335 11.893-11.893a11.821 11.825 0 00-3.48-8.413z"/>
-                    </svg>
-                    <span>Get My Free Quote</span>
-                    <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"></i>
-                </a>
+                <!-- TAB NAVIGATION -->
+                <div class="flex flex-wrap gap-2 mb-16 border-b border-slate-100 pb-4 max-w-7xl mx-auto overflow-x-auto no-scrollbar">
+                    <button onclick="switchTab('all')" id="tab-all" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-indigo-600 text-indigo-600 uppercase transition-all whitespace-nowrap">Most Popular</button>
+                    <button onclick="switchTab('silent-balls')" id="tab-silent-balls" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-transparent text-slate-400 uppercase transition-all whitespace-nowrap">Silent Balls</button>
+                    <button onclick="switchTab('training')" id="tab-training" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-transparent text-slate-400 uppercase transition-all whitespace-nowrap">Training Gear</button>
+                    <button onclick="switchTab('diy-knitting')" id="tab-diy-knitting" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-transparent text-slate-400 uppercase transition-all whitespace-nowrap">DIY Kits</button>
+                    <button onclick="switchTab('arts-crafts')" id="tab-arts-crafts" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-transparent text-slate-400 uppercase transition-all whitespace-nowrap">Arts & Crafts</button>
+                    <button onclick="switchTab('wellness')" id="tab-wellness" class="tab-btn px-6 py-4 font-black text-[11px] tracking-[0.1em] border-b-2 border-transparent text-slate-400 uppercase transition-all whitespace-nowrap">Wellness</button>
+                </div>
 
-                <div class="flex items-center justify-center space-x-6 text-xs text-gray-400 font-bold border-t border-gray-100 pt-6 w-full">
-                    <span class="flex items-center space-x-1">
-                        <i data-lucide="clock" class="w-4 h-4 text-brand-blue"></i>
-                        <span>Response in &lt;10 Min</span>
-                    </span>
-                    <span class="flex items-center space-x-1">
-                        <i data-lucide="image" class="w-4 h-4 text-brand-blue"></i>
-                        <span>Free Custom Render Mockup</span>
-                    </span>
+                <!-- PRODUCT GRID -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-100 border border-slate-100">
+                    <!-- Products injected via JS -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    </div> <!-- End of main-content-wrapper -->
+        <!-- BRANDS CLOUD -->
+        <section class="py-24 bg-slate-50 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 text-center space-y-12">
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Authorized High-End Materials & Technology Partners</h4>
+                <div class="flex flex-wrap justify-center items-center gap-12 sm:gap-24 opacity-40 grayscale brightness-0">
+                    <img src="https://cdn.gorilladash.com/images/media/12559954/fully-promoted-usa-nike-6630f6ed01c6c.webp" class="h-10 sm:h-12 w-auto" alt="Nike">
+                    <img src="https://cdn.gorilladash.com/images/media/12559937/fully-promoted-usa-gildan-6630f6e9567c2.webp" class="h-10 sm:h-12 w-auto" alt="Gildan">
+                    <img src="https://cdn.gorilladash.com/images/media/12559938/fully-promoted-usa-dickies-6630f6e95db2d.webp" class="h-10 sm:h-12 w-auto" alt="Dickies">
+                    <img src="https://cdn.gorilladash.com/images/media/12559941/fully-promoted-usa-thenorthface-6630f6eb20310.webp" class="h-10 sm:h-12 w-auto" alt="TNF">
+                </div>
+            </div>
+        </section>
 
     </div><!-- End main-content-wrapper -->
 
     <!-- FOOTER -->
-    <footer class="bg-brand-charcoal text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3 text-white">
-                        <img src="https://sc02.alicdn.com/kf/Ac0d8fe951c6e45d2adb443bffb357d82w.png" alt="JEANYOO Logo" class="h-10 w-auto rounded object-contain">
-                        <span class="text-xl font-extrabold serif-title">JEANYOO</span>
+    <footer class="bg-slate-950 text-white py-32">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-20">
+            <div class="space-y-10">
+                <h5 class="text-3xl font-black tracking-tighter uppercase italic">JEANYOO</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">Globally known B2B manufacturer specializing in high-end branding solutions, premium custom apparel, and turnkey promotional merchandise.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center hover:bg-indigo-600 transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div class="space-y-10">
+                <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Explore</h6>
+                <ul class="space-y-5 text-sm font-bold text-slate-400">
+                    <li><a href="#" class="hover:text-white transition-colors">Our Showroom</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Bespoke Manufacturing</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Client Work</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Global DDP Logistics</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-10">
+                <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Capabilities</h6>
+                <ul class="space-y-5 text-sm font-bold text-slate-400">
+                    <li><a href="#" class="hover:text-white transition-colors">3D Puff Embroidery</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Silk Screen Mastery</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Premium Debossing</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Laser Etching</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-10">
+                <h6 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Contact</h6>
+                <div class="space-y-6 text-sm font-bold text-slate-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="text-indigo-500"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                        <span>sales@jeanyoo.com</span>
                     </div>
-                    <p class="text-xs leading-relaxed">High-end custom branding manufacturer. Providing turnkey promotional products and professional logo custom services for enterprises worldwide.</p>
-                </div>
-
-                <div class="space-y-4">
-                    <h6 class="text-xs font-extrabold uppercase tracking-wider text-slate-100">B2B Capabilities</h6>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#screen-pad-printing" class="hover:text-white transition-colors">Screen & Pad Printing</a></li>
-                        <li><a href="#white-ink-transfer" class="hover:text-white transition-colors">DTF Heat Transfer</a></li>
-                        <li><a href="#embroidery-section" class="hover:text-white transition-colors">Custom Embroidery</a></li>
-                        <li><a href="#laser-engraving" class="hover:text-white transition-colors">Laser Engraving</a></li>
-                        <li><a href="#debossing" class="hover:text-white transition-colors">Premium Debossing</a></li>
-                        <li><a href="#foil-stamping" class="hover:text-white transition-colors">Luxury Foil Stamping</a></li>
-                    </ul>
-                </div>
-
-                <div class="space-y-4">
-                    <h6 class="text-xs font-extrabold uppercase tracking-wider text-slate-100">Workshop & Support</h6>
-                    <p class="text-xs">Manufacturing Industrial Zone,<br>Zhejiang Province, China</p>
-                    <p class="text-xs block text-slate-500">Mon - Sat: 9:00 AM - 6:00 PM (GMT+8)</p>
-                </div>
-
-                <div class="space-y-4">
-                    <h6 class="text-xs font-extrabold uppercase tracking-wider text-slate-100">Certifications & Safety</h6>
-                    <div class="flex items-center space-x-2 text-xs text-emerald-400 font-bold bg-white/[0.03] border border-white/5 p-3 rounded-xl">
-                        <i data-lucide="shield-check" class="w-4 h-4"></i>
-                        <span>100% Platform Verified Manufacturer</span>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-indigo-500"><i data-lucide="phone" class="w-5 h-5"></i></div>
+                        <span>+86 189 7149 1586</span>
+                    </div>
+                    <div class="pt-4">
+                        <div class="text-[10px] uppercase text-slate-700 mb-2">Factory Address</div>
+                        <p class="text-xs leading-relaxed">Manufacturing Zone A5, Zhejiang, China. Mon-Sat 9AM-6PM.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
-                <p>&copy; 2026 JEANYOO. Custom Logo Products Manufacturer. All rights reserved. Sourced & Built under Accio Work Sourcing Agent.</p>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-32 pt-12 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-10">
+            <p class="text-slate-700 text-[10px] font-black uppercase tracking-[0.3em]">&copy; 2026 JEANYOO INDUSTRIES. EXCELLENCE IN BRANDING.</p>
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-2 text-[10px] font-black uppercase text-slate-700">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>IP Protected</span>
+                </div>
+                <div class="flex items-center space-x-2 text-[10px] font-black uppercase text-slate-700">
+                    <i data-lucide="globe-2" class="w-4 h-4"></i>
+                    <span>DDP Global Delivery</span>
+                </div>
             </div>
         </div>
     </footer>
@@ -762,15 +368,7 @@
         const menu = document.getElementById('mobile-menu');
 
         btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Close drawer when clicking a link
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
+            menu.classList.remove('hidden');
         });
 
         // Product Catalog Data
@@ -788,70 +386,53 @@
                 console.error('Error loading products:', error);
                 const grid = document.getElementById('product-grid');
                 if (grid) {
-                    grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-400">Unable to load catalog. Please try refreshing.</div>`;
+                    grid.innerHTML = `<div class="col-span-full text-center py-24 text-slate-400 font-bold uppercase tracking-widest">Unable to load catalog. Please try refreshing.</div>`;
                 }
             }
         }
 
-        // Initialize and render
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('DOM fully loaded and parsed');
-            loadProducts();
-        });
-
         function renderProducts(category) {
             const grid = document.getElementById('product-grid');
             if (!grid) return;
-
             grid.innerHTML = '';
-            
+
             const filtered = allProducts.filter(p => {
                 if (category === 'all') return p.isPopular === true;
                 return p.category === category;
             });
 
             if (filtered.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-12 text-gray-400">
-                        No products found in this category.
-                    </div>
-                `;
+                grid.innerHTML = `<div class="col-span-full text-center py-32 text-slate-400 font-bold uppercase tracking-widest bg-white">No items found in this section.</div>`;
                 return;
             }
 
-                        filtered.forEach(p => {
-                const colorsHtml = (p.colors && Array.isArray(p.colors) && p.colors.length > 0) ? p.colors.map(color => `
-                    <span class="w-3 h-3 rounded-full border border-gray-200" style="background-color: ${color};" title="${color}"></span>
-                `).join('') : '';
-
+            filtered.forEach(p => {
                 const card = document.createElement('div');
-                card.className = "product-card bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-md transition-all duration-300 p-3 sm:p-4 flex flex-col justify-between cursor-pointer";
+                card.className = "product-card bg-white p-10 sm:p-12 flex flex-col justify-between cursor-pointer group hover:bg-slate-50 transition-all duration-700";
                 card.onclick = () => showDetail(p.id);
                 
                 card.innerHTML = `
-                    <div class="space-y-3">
-                        <div class="aspect-square bg-gray-50 rounded-lg flex items-center justify-center p-3 sm:p-4 overflow-hidden relative">
-                            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover/item:scale-105 transition-transform duration-500">
-                            <span class="absolute top-2 right-2 bg-gray-900/10 text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">MOQ: ${p.moq}</span>
+                    <div class="space-y-10">
+                        <div class="aspect-square flex items-center justify-center relative overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" class="max-h-full max-w-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute top-0 right-0 bg-slate-950 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">MOQ: ${p.moq}</div>
                         </div>
-                        <div class="flex items-center space-x-1.5 pt-1">
-                            ${colorsHtml}
-                        </div>
-                        <div class="space-y-1">
-                            <h4 class="text-xs sm:text-sm font-bold text-gray-900 line-clamp-2 min-h-[36px] sm:min-h-[40px]">${p.name}</h4>
-                            <p class="text-[10px] text-gray-400 font-medium">${p.description || ''}</p>
+                        <div class="space-y-5">
+                            <div class="text-[10px] font-black text-indigo-600 uppercase tracking-[0.3em]">${p.category.replace('-', ' ')}</div>
+                            <h4 class="text-2xl font-extrabold text-slate-900 serif-title line-clamp-2 leading-[1.2] group-hover:text-indigo-600 transition-colors">${p.name}</h4>
                         </div>
                     </div>
-                    <div class="pt-3 border-t border-gray-50 flex items-center justify-between mt-3">
-                        <span class="text-xs sm:text-sm font-extrabold text-brand-blue">From $${p.price}</span>
-                        <button onclick="event.stopPropagation(); showDetail('${p.id}')" class="text-[10px] sm:text-xs font-bold bg-slate-50 text-brand-charcoal px-2.5 py-1.5 rounded-lg hover:bg-brand-blue hover:text-white transition-all">Quick View</button>
+                    <div class="pt-10 border-t border-slate-100 flex items-center justify-between mt-12">
+                        <span class="text-xl font-black text-slate-900">$${p.price} <span class="text-[11px] text-slate-400 uppercase tracking-widest ml-1 font-bold">Wholesale</span></span>
+                        <div class="text-indigo-600 group-hover:translate-x-3 transition-transform duration-500">
+                            <i data-lucide="move-right" class="w-8 h-8"></i>
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        
         // View Management & Routing
         function showDetail(productId) {
             const p = allProducts.find(item => item.id == productId);
@@ -860,11 +441,9 @@
             // 1. Basic Info
             document.getElementById('detail-image').src = p.image;
             document.getElementById('detail-title').innerText = p.name;
-            document.getElementById('detail-price').innerText = `$${p.price}`;
-            document.getElementById('detail-moq').innerText = `${p.moq} Pcs`;
-            document.getElementById('detail-desc').innerText = p.description || 'Professional customized manufacturing services with high-quality standards.';
+            document.getElementById('detail-desc').innerText = p.description || 'Professional customized manufacturing services with industry-leading quality standards. We offer comprehensive B2B branding solutions, dedicated account management, and reliable global DDP shipping options.';
             document.getElementById('detail-breadcrumb-cat').innerText = p.category.replace('-', ' ');
-            document.getElementById('detail-tag').innerText = p.category.toUpperCase();
+            document.getElementById('detail-tag').innerText = p.category.toUpperCase() + ' • VERIFIED';
             
             // 2. Gallery
             const gallery = document.getElementById('detail-gallery');
@@ -872,14 +451,14 @@
             const allImages = p.images && p.images.length > 0 ? p.images : [p.image];
             allImages.forEach((imgUrl, index) => {
                 const thumb = document.createElement('button');
-                thumb.className = `w-20 h-20 flex-shrink-0 rounded-2xl border-2 overflow-hidden transition-all ${index === 0 ? 'border-brand-blue shadow-sm' : 'border-gray-100 hover:border-gray-200'}`;
+                thumb.className = `w-24 h-24 flex-shrink-0 rounded-[2.5rem] border-4 overflow-hidden transition-all ${index === 0 ? 'border-indigo-600 shadow-2xl scale-105' : 'border-slate-50 hover:border-slate-200'}`;
                 thumb.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-cover mix-blend-multiply">`;
                 thumb.onclick = () => {
                     document.getElementById('detail-image').src = imgUrl;
-                    gallery.querySelectorAll('button').forEach(b => b.classList.remove('border-brand-blue', 'shadow-sm'));
-                    gallery.querySelectorAll('button').forEach(b => b.classList.add('border-gray-100'));
-                    thumb.classList.add('border-brand-blue', 'shadow-sm');
-                    thumb.classList.remove('border-gray-100');
+                    gallery.querySelectorAll('button').forEach(b => b.classList.remove('border-indigo-600', 'shadow-2xl', 'scale-105'));
+                    gallery.querySelectorAll('button').forEach(b => b.classList.add('border-slate-50'));
+                    thumb.classList.add('border-indigo-600', 'shadow-2xl', 'scale-105');
+                    thumb.classList.remove('border-slate-50');
                 };
                 gallery.appendChild(thumb);
             });
@@ -890,26 +469,22 @@
             if (p.ladderPrices && p.ladderPrices.length > 0) {
                 p.ladderPrices.forEach(tier => {
                     ladderGrid.innerHTML += `
-                        <div class="bg-white p-4 text-center">
-                            <div class="text-[10px] font-bold text-gray-400 uppercase mb-1">${tier.minQuantity}+ Pcs</div>
-                            <div class="text-sm font-extrabold text-gray-900">$${tier.price}</div>
+                        <div class="bg-white p-10 text-center">
+                            <div class="text-[10px] font-black text-slate-400 uppercase mb-3 tracking-[0.2em]">${tier.minQuantity}+ Pcs</div>
+                            <div class="text-3xl font-black text-slate-900">$${tier.price}</div>
                         </div>
                     `;
                 });
             } else {
-                ladderGrid.innerHTML = `
-                    <div class="bg-white col-span-3 p-6 text-center text-sm font-bold text-gray-900">
-                        Contact us for custom bulk pricing
-                    </div>
-                `;
+                ladderGrid.innerHTML = `<div class="bg-white col-span-3 p-16 text-center text-sm font-black text-slate-900 uppercase tracking-[0.3em]">Contact for Corporate Pricing</div>`;
             }
             
             // 4. WhatsApp Inquiry
             const whatsappNumber = "8618971491586";
-            const message = encodeURIComponent(`Hi JEANYOO, I'm interested in "${p.name}". Please provide more details and a quote.`);
+            const message = encodeURIComponent(`Hi JEANYOO Team, I am inquiring about the "${p.name}". Can we discuss the custom mockup and bulk pricing options?`);
             document.getElementById('detail-inquiry-btn').href = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-            // View Management
+            // Toggle Views
             document.getElementById('main-content-wrapper').classList.add('view-hidden');
             document.getElementById('product-detail-view').classList.remove('view-hidden');
             window.scrollTo(0,0);
@@ -931,21 +506,23 @@
             }
         };
 
-        // Product Catalog Tab Switcher
         function switchTab(category) {
-            const tabs = document.querySelectorAll('.tab-btn');
-            tabs.forEach(tab => {
-                if (tab.id === `tab-${category}`) {
-                    tab.classList.remove('border-transparent', 'text-gray-500');
-                    tab.classList.add('border-brand-blue', 'text-brand-blue');
-                } else {
-                    tab.classList.add('border-transparent', 'text-gray-500');
-                    tab.classList.remove('border-brand-blue', 'text-brand-blue');
-                }
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-indigo-600', 'text-indigo-600');
+                btn.classList.add('border-transparent', 'text-slate-400');
             });
+            
+            const activeBtn = document.getElementById('tab-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-transparent', 'text-slate-400');
+                activeBtn.classList.add('border-indigo-600', 'text-indigo-600');
+            }
 
             renderProducts(category);
         }
+
+        // Initialize loading
+        loadProducts();
 
     </script>
 </body>
