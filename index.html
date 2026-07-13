@@ -6071,7 +6071,13 @@ Fast shipping crafts",
 ];
 
         // Initialize and render
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded and parsed');
+            loadProducts();
+        });
+
         function loadProducts() {
+            console.log('Starting product render, total products:', allProducts.length);
             renderProducts('all');
         }
 
@@ -6082,7 +6088,7 @@ Fast shipping crafts",
             grid.innerHTML = '';
             
             const filtered = allProducts.filter(p => {
-                if (category === 'all') return p.isPopular;
+                if (category === 'all') return p.isPopular === true;
                 return p.category === category;
             });
 
@@ -6142,8 +6148,6 @@ Fast shipping crafts",
             renderProducts(category);
         }
 
-        // Initialize loading
-        loadProducts();
     </script>
 </body>
 </html>
