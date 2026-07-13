@@ -876,8 +876,10 @@
             document.getElementById('modal-desc').innerText = p.description || 'Professional customized manufacturing services with high-quality standards.';
             document.getElementById('modal-category').innerText = p.category.replace('-', ' ');
             
-            // Set inquiry link to the product URL
-            document.getElementById('modal-inquiry').href = p.url || 'https://wa.me/8618971491586';
+            // Set inquiry link to WhatsApp with product context
+            const whatsappNumber = "8618971491586";
+            const message = encodeURIComponent(`Hi JEANYOO, I'm interested in "${p.name}". Could you please provide more details and pricing?`);
+            document.getElementById('modal-inquiry').href = `https://wa.me/${whatsappNumber}?text=${message}`;
 
             document.getElementById('product-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
